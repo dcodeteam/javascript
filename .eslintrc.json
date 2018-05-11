@@ -1,0 +1,8 @@
+{
+  "root": true,
+  "env": { "jest": true },
+  "extends": ["./packages/eslint-config-node/index.js"],
+  "rules": {
+    "import/no-extraneous-dependencies": "off"
+  }
+}

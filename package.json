@@ -1,0 +1,29 @@
+{
+  "private": true,
+  "name": "javascript",
+  "version": "0.0.1",
+  "main": "index.js",
+  "license": "MIT",
+  "description": "JavaScript Style Guide",
+  "author": "Umidbek Karimov <uma.karimov@gmail.com>",
+  "repository": "https://github.com/dcodeteam/javascript.git",
+  "scripts": {
+    "test": "jest --watch",
+    "lint": "eslint \"packages/**/*.js\"",
+    "reformat": "prettier --write \"**/*.{js,md,json}\"",
+    "ci":
+      "yarn reformat -l --no-write && yarn lint && yarn test --ci --no-watch"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "jest": "^22.4.3",
+    "lerna": "^2.11.0",
+    "prettier": "^1.12.1"
+  },
+  "workspaces": [
+    "packages/eslint-config",
+    "packages/eslint-config-base",
+    "packages/eslint-config-node",
+    "packages/eslint-config-react"
+  ]
+}
