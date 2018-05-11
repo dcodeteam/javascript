@@ -2,7 +2,7 @@
   "private": false,
   "name": "@dc0de/eslint-config-base",
   "license": "MIT",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "main": "index.js",
   "publishConfig": {
     "access": "public"
