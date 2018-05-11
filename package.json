@@ -13,7 +13,7 @@
   "scripts": {
     "test": "jest --watch",
     "lint": "eslint \"packages/**/*.js\"",
-    "reformat": "prettier --write \"**/*.{js,md,json}\"",
+    "reformat": "prettier --write \"**/*.{js,md}\"",
     "ci":
       "yarn reformat -l --no-write && yarn lint && yarn test --ci --no-watch"
   },
