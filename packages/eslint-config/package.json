@@ -2,13 +2,13 @@
   "private": false,
   "name": "@dc0de/eslint-config",
   "license": "MIT",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "index.js",
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "@dc0de/eslint-config-base": "^0.0.1"
+    "@dc0de/eslint-config-base": "^0.0.2"
   },
   "devDependencies": {
     "eslint-config-prettier": "^2.9.0",
