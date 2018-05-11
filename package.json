@@ -7,6 +7,9 @@
   "description": "JavaScript Style Guide",
   "author": "Umidbek Karimov <uma.karimov@gmail.com>",
   "repository": "https://github.com/dcodeteam/javascript.git",
+  "jest": {
+    "testEnvironment": "node"
+  },
   "scripts": {
     "test": "jest --watch",
     "lint": "eslint \"packages/**/*.js\"",
