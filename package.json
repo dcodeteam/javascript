@@ -11,6 +11,7 @@
     "testEnvironment": "node"
   },
   "scripts": {
+    "all": "yarn reformat && yarn lint --fix && yarn test --no-watch",
     "test": "jest --watch",
     "lint": "eslint \"packages/**/*.js\"",
     "reformat": "prettier --write \"**/*.{js,md}\"",
