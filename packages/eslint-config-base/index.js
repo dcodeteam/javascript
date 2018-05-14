@@ -33,5 +33,12 @@ module.exports = {
     "import/no-unresolved": "off",
     "import/prefer-default-export": "off",
     "import/no-extraneous-dependencies": "off",
+
+    "import/no-internal-modules": [
+      "error",
+      {
+        allow: ["**/*.css", "**/*.scss"],
+      },
+    ],
   },
 };
