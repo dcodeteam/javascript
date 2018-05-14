@@ -2,15 +2,15 @@
   "private": false,
   "name": "@dc0de/eslint-config-base",
   "license": "MIT",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "main": "index.js",
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "eslint-plugin-import": "^2.11.0",
+    "eslint-config-airbnb-base": "^12.1.0",
     "eslint-config-prettier": "^2.9.0",
-    "eslint-config-airbnb-base": "^12.1.0"
+    "eslint-plugin-import": "^2.11.0"
   },
   "peerDependencies": {
     "eslint": "^4.19.1"
