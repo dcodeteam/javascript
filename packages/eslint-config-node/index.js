@@ -1,16 +1,8 @@
 "use strict";
 
 module.exports = {
-  parserOptions: {
-    ecmaVersion: 2018,
-    sourceType: "script",
-    ecmaFeatures: {
-      experimentalObjectRestSpread: true,
-    },
-  },
-
-  plugins: ["import"],
-
+  env: { node: true },
+  parserOptions: { sourceType: "script" },
   extends: ["@dc0de/eslint-config-base"],
 
   rules: {

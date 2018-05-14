@@ -2,15 +2,8 @@
 
 module.exports = {
   parser: "typescript-eslint-parser",
-  parserOptions: {
-    ecmaVersion: 2018,
-    sourceType: "module",
-    ecmaFeatures: {
-      experimentalObjectRestSpread: true,
-    },
-  },
 
-  plugins: ["import", "typescript"],
+  plugins: ["typescript"],
 
   settings: {
     "import/parsers": {
@@ -34,14 +27,14 @@ module.exports = {
     "no-shadow-restricted-names": "off",
 
     // TODO: https://github.com/eslint/typescript-eslint-parser/issues/414
-    "no-restricted-globals": "off",
+    "no-restricted-globals": ["off", {}],
 
     // TODO: https://github.com/nzakas/eslint-plugin-typescript/issues/new
     "no-multi-str": "off",
 
     // Typescript covers this.
-    "no-cond-assign": "off",
-    "no-unused-vars": "off",
+    "no-cond-assign": ["off", {}],
+    "no-unused-vars": ["off", {}],
     "consistent-return": "off",
 
     //

@@ -1,7 +1,7 @@
 "use strict";
 
 module.exports = {
-  plugins: ["import", "typescript"],
+  env: { browser: true },
 
   extends: ["airbnb", "@dc0de/eslint-config"],
 
@@ -10,12 +10,12 @@ module.exports = {
     // eslint-plugin-react
     //
 
-    "react/sort-comp": "off",
+    "react/sort-comp": ["off", {}],
     "react/jsx-no-undef": "off",
-    "react/jsx-filename-extension": "off",
-    "react/jsx-max-props-per-line": "off",
-    "react/jsx-first-prop-new-line": "off",
-    "react/prefer-stateless-function": "off",
+    "react/jsx-filename-extension": ["off", {}],
+    "react/jsx-max-props-per-line": ["off", {}],
+    "react/jsx-first-prop-new-line": ["off", {}],
+    "react/prefer-stateless-function": ["off", {}],
     "react/jsx-boolean-value": ["error", "always"],
 
     //

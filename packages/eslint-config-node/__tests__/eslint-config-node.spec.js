@@ -1,10 +1,5 @@
 "use strict";
 
-const { CLIEngine } = require("eslint");
-const config = require("../index");
+const { initConfigTest } = require("@dc0de/eslint-test-tools");
 
-describe("eslint-config-node", () => {
-  it("should not throw", () => {
-    expect(() => new CLIEngine({ baseConfig: config })).not.toThrow();
-  });
-});
+initConfigTest("eslint-config-node", require("../index"));

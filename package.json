@@ -25,6 +25,7 @@
     "prettier": "^1.12.1"
   },
   "workspaces": [
+    "packages/eslint-test-tools",
     "packages/eslint-config",
     "packages/eslint-config-base",
     "packages/eslint-config-node",
