@@ -118,6 +118,7 @@ Array [
   "react",
   "jsx-a11y",
   "typescript",
+  "react-native",
 ]
 `;
 

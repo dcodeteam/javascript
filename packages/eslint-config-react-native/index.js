@@ -7,6 +7,7 @@ module.exports = {
     "react-native/react-native": true,
   },
 
+  plugins: ["react-native"],
   extends: ["@dc0de/eslint-config-react"],
 
   rules: {
