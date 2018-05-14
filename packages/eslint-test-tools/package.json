@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "@dc0de/eslint-test-tools",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "main": "./index.js",
   "dependencies": {
     "eslint": "^4.19.1"
