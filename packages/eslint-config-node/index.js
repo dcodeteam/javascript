@@ -11,6 +11,7 @@ module.exports = {
     //
 
     "no-console": "off",
+    "global-require": "off",
     strict: ["error", "safe"],
 
     //

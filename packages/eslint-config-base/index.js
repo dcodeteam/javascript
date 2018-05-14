@@ -22,7 +22,6 @@ module.exports = {
 
     // D:CODE Specific
     "no-console": "error",
-    "global-require": "off",
     "no-useless-constructor": "off",
     "class-methods-use-this": ["off", {}],
     "no-empty": ["error", { allowEmptyCatch: true }],

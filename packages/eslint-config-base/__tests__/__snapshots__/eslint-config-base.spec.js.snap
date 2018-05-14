@@ -306,7 +306,7 @@ Object {
       "allowImplicit": true,
     },
   ],
-  "global-require": "off",
+  "global-require": "error",
   "guard-for-in": "error",
   "handle-callback-err": "off",
   "id-blacklist": "off",
