@@ -2,13 +2,13 @@
   "private": false,
   "name": "@dc0de/eslint-config-react-native",
   "license": "MIT",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "main": "index.js",
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "@dc0de/eslint-config-react": "^0.0.6",
+    "@dc0de/eslint-config-react": "^0.0.7",
     "eslint-plugin-react-native": "^3.2.1"
   },
   "devDependencies": {
