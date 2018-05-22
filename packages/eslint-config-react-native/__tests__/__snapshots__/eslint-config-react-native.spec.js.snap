@@ -28,6 +28,7 @@ Array [
   "prettier",
   "@dc0de/eslint-config-base",
   "airbnb",
+  "prettier/react",
   "@dc0de/eslint-config",
   "@dc0de/eslint-config-react",
 ]
@@ -1297,10 +1298,10 @@ Object {
     "always",
   ],
   "react/jsx-closing-bracket-location": Array [
-    "error",
+    "off",
     "line-aligned",
   ],
-  "react/jsx-closing-tag-location": "error",
+  "react/jsx-closing-tag-location": "off",
   "react/jsx-curly-brace-presence": Array [
     "error",
     Object {
@@ -1309,14 +1310,14 @@ Object {
     },
   ],
   "react/jsx-curly-spacing": Array [
-    "error",
+    "off",
     "never",
     Object {
       "allowMultiline": true,
     },
   ],
   "react/jsx-equals-spacing": Array [
-    "error",
+    "off",
     "never",
   ],
   "react/jsx-filename-extension": Array [
@@ -1335,11 +1336,11 @@ Object {
     },
   ],
   "react/jsx-indent": Array [
-    "error",
+    "off",
     2,
   ],
   "react/jsx-indent-props": Array [
-    "error",
+    "off",
     2,
   ],
   "react/jsx-key": "off",
@@ -1370,6 +1371,7 @@ Object {
   ],
   "react/jsx-no-target-blank": "error",
   "react/jsx-no-undef": "off",
+  "react/jsx-one-expression-per-line": "off",
   "react/jsx-pascal-case": Array [
     "error",
     Object {
@@ -1394,7 +1396,7 @@ Object {
     "always",
   ],
   "react/jsx-tag-spacing": Array [
-    "error",
+    "off",
     Object {
       "afterOpening": "never",
       "beforeSelfClosing": "always",
@@ -1406,7 +1408,7 @@ Object {
   ],
   "react/jsx-uses-vars": "error",
   "react/jsx-wrap-multilines": Array [
-    "error",
+    "off",
     Object {
       "arrow": true,
       "assignment": true,

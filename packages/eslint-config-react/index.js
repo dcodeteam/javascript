@@ -3,7 +3,7 @@
 module.exports = {
   env: { browser: true },
 
-  extends: ["airbnb", "@dc0de/eslint-config"],
+  extends: ["airbnb", "prettier/react", "@dc0de/eslint-config"],
 
   rules: {
     //
