@@ -1,7 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`eslint-config-react-native should properly extend parent rules: baseDirectory 1`] = `"/Users/umidbekkarimov/Documents/Projects/dcodeteam/javascript"`;
-
 exports[`eslint-config-react-native should properly extend parent rules: env 1`] = `
 Object {
   "browser": false,
@@ -34,37 +32,41 @@ Array [
 ]
 `;
 
-exports[`eslint-config-react-native should properly extend parent rules: filePath 1`] = `""`;
-
 exports[`eslint-config-react-native should properly extend parent rules: globals 1`] = `
 Object {
   "Array": false,
   "ArrayBuffer": false,
+  "Blob": false,
   "Boolean": false,
   "DataView": false,
   "Date": false,
   "Error": false,
   "EvalError": false,
+  "Event": false,
+  "EventTarget": false,
+  "File": false,
+  "FileReader": false,
   "Float32Array": false,
   "Float64Array": false,
+  "FormData": false,
   "Function": false,
   "Infinity": false,
   "Int16Array": false,
   "Int32Array": false,
   "Int8Array": false,
   "JSON": false,
-  "Map": false,
+  "Map": true,
   "Math": false,
   "NaN": false,
   "Number": false,
   "Object": false,
-  "Promise": false,
+  "Promise": true,
   "Proxy": false,
   "RangeError": false,
   "ReferenceError": false,
   "Reflect": false,
   "RegExp": false,
-  "Set": false,
+  "Set": true,
   "String": false,
   "Symbol": false,
   "SyntaxError": false,
@@ -76,6 +78,17 @@ Object {
   "Uint8ClampedArray": false,
   "WeakMap": false,
   "WeakSet": false,
+  "WebSocket": false,
+  "XMLHttpRequest": false,
+  "__DEV__": false,
+  "__dirname": false,
+  "alert": false,
+  "cancelAnimationFrame": false,
+  "cancelIdleCallback": false,
+  "clearImmediate": true,
+  "clearInterval": false,
+  "clearTimeout": false,
+  "console": false,
   "constructor": false,
   "decodeURI": false,
   "decodeURIComponent": false,
@@ -83,22 +96,56 @@ Object {
   "encodeURIComponent": false,
   "escape": false,
   "eval": false,
+  "exports": false,
+  "fetch": false,
+  "global": false,
   "hasOwnProperty": false,
   "isFinite": false,
   "isNaN": false,
   "isPrototypeOf": false,
+  "module": false,
+  "navigator": false,
   "parseFloat": false,
   "parseInt": false,
+  "process": false,
   "propertyIsEnumerable": false,
+  "requestAnimationFrame": true,
+  "requestIdleCallback": true,
+  "require": false,
+  "setImmediate": true,
+  "setInterval": false,
+  "setTimeout": false,
   "toLocaleString": false,
   "toString": false,
   "undefined": false,
   "unescape": false,
   "valueOf": false,
+  "window": false,
 }
 `;
 
-exports[`eslint-config-react-native should properly extend parent rules: parser 1`] = `"/Users/umidbekkarimov/Documents/Projects/dcodeteam/javascript/node_modules/typescript-eslint-parser/parser.js"`;
+exports[`eslint-config-react-native should properly extend parent rules: parser 1`] = `
+Array [
+  "node_modules/eslint-config-airbnb-base/rules/best-practices.js",
+  "node_modules/eslint-config-airbnb-base/rules/errors.js",
+  "node_modules/eslint-config-airbnb-base/rules/node.js",
+  "node_modules/eslint-config-airbnb-base/rules/style.js",
+  "node_modules/eslint-config-airbnb-base/rules/variables.js",
+  "node_modules/eslint-config-airbnb-base/rules/es6.js",
+  "node_modules/eslint-config-airbnb-base/rules/imports.js",
+  "node_modules/eslint-config-airbnb-base/index.js",
+  "node_modules/eslint-config-airbnb-base/rules/strict.js",
+  "node_modules/eslint-config-airbnb/rules/react.js",
+  "node_modules/eslint-config-airbnb/rules/react-a11y.js",
+  "airbnb-base",
+  "prettier",
+  "@dc0de/eslint-config-base",
+  "airbnb",
+  "prettier/react",
+  "@dc0de/eslint-config",
+  "@dc0de/eslint-config-react",
+]
+`;
 
 exports[`eslint-config-react-native should properly extend parent rules: parserOptions 1`] = `
 Object {

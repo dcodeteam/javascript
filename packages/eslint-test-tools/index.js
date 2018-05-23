@@ -4,8 +4,9 @@ const { CLIEngine } = require("eslint");
 
 module.exports = { initConfigTest };
 
-function initConfigTest(name, baseConfig) {
-  const createCli = () => new CLIEngine({ baseConfig, useEslintrc: false });
+function initConfigTest(name, configFile) {
+  const baseConfig = require(configFile);
+  const createCli = () => new CLIEngine({ useEslintrc: false, configFile });
 
   describe(name, () => {
     it("should not throw on init", () => {
@@ -37,6 +38,8 @@ function initConfigTest(name, baseConfig) {
           } else {
             expect(composed).toMatchObject(base);
           }
+        } else if (key === "parser") {
+          expect(composed).toEqual(expect.stringContaining(base));
         } else {
           expect(composed).toEqual(base);
         }
@@ -44,7 +47,7 @@ function initConfigTest(name, baseConfig) {
 
       Object.keys(composedConfig).forEach(key => {
         const config =
-          key !== "extends"
+          key !== "parser" && key !== "extends"
             ? composedConfig[key]
             : composedConfig.extends.map(x => {
                 const idx = x.indexOf("node_modules");

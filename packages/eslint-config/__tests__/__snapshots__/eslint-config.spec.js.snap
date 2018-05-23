@@ -1,7 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`eslint-config should properly extend parent rules: baseDirectory 1`] = `"/Users/umidbekkarimov/Documents/Projects/dcodeteam/javascript"`;
-
 exports[`eslint-config should properly extend parent rules: env 1`] = `
 Object {
   "es6": true,
@@ -23,8 +21,6 @@ Array [
   "@dc0de/eslint-config-base",
 ]
 `;
-
-exports[`eslint-config should properly extend parent rules: filePath 1`] = `""`;
 
 exports[`eslint-config should properly extend parent rules: globals 1`] = `
 Object {
@@ -109,7 +105,20 @@ Object {
 }
 `;
 
-exports[`eslint-config should properly extend parent rules: parser 1`] = `"typescript-eslint-parser"`;
+exports[`eslint-config should properly extend parent rules: parser 1`] = `
+Array [
+  "node_modules/eslint-config-airbnb-base/rules/best-practices.js",
+  "node_modules/eslint-config-airbnb-base/rules/errors.js",
+  "node_modules/eslint-config-airbnb-base/rules/node.js",
+  "node_modules/eslint-config-airbnb-base/rules/style.js",
+  "node_modules/eslint-config-airbnb-base/rules/variables.js",
+  "node_modules/eslint-config-airbnb-base/rules/es6.js",
+  "node_modules/eslint-config-airbnb-base/rules/imports.js",
+  "airbnb-base",
+  "prettier",
+  "@dc0de/eslint-config-base",
+]
+`;
 
 exports[`eslint-config should properly extend parent rules: parserOptions 1`] = `
 Object {

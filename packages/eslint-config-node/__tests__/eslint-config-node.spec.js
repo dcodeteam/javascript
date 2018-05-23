@@ -2,4 +2,4 @@
 
 const { initConfigTest } = require("@dc0de/eslint-test-tools");
 
-initConfigTest("eslint-config-node", require("../index"));
+initConfigTest("eslint-config-node", require.resolve("../index"));

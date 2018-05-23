@@ -1,7 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`eslint-config-react should properly extend parent rules: baseDirectory 1`] = `"/Users/umidbekkarimov/Documents/Projects/dcodeteam/javascript"`;
-
 exports[`eslint-config-react should properly extend parent rules: env 1`] = `
 Object {
   "browser": true,
@@ -31,8 +29,6 @@ Array [
   "@dc0de/eslint-config",
 ]
 `;
-
-exports[`eslint-config-react should properly extend parent rules: filePath 1`] = `""`;
 
 exports[`eslint-config-react should properly extend parent rules: globals 1`] = `
 Object {
@@ -908,7 +904,27 @@ Object {
 }
 `;
 
-exports[`eslint-config-react should properly extend parent rules: parser 1`] = `"/Users/umidbekkarimov/Documents/Projects/dcodeteam/javascript/node_modules/typescript-eslint-parser/parser.js"`;
+exports[`eslint-config-react should properly extend parent rules: parser 1`] = `
+Array [
+  "node_modules/eslint-config-airbnb-base/rules/best-practices.js",
+  "node_modules/eslint-config-airbnb-base/rules/errors.js",
+  "node_modules/eslint-config-airbnb-base/rules/node.js",
+  "node_modules/eslint-config-airbnb-base/rules/style.js",
+  "node_modules/eslint-config-airbnb-base/rules/variables.js",
+  "node_modules/eslint-config-airbnb-base/rules/es6.js",
+  "node_modules/eslint-config-airbnb-base/rules/imports.js",
+  "node_modules/eslint-config-airbnb-base/index.js",
+  "node_modules/eslint-config-airbnb-base/rules/strict.js",
+  "node_modules/eslint-config-airbnb/rules/react.js",
+  "node_modules/eslint-config-airbnb/rules/react-a11y.js",
+  "airbnb-base",
+  "prettier",
+  "@dc0de/eslint-config-base",
+  "airbnb",
+  "prettier/react",
+  "@dc0de/eslint-config",
+]
+`;
 
 exports[`eslint-config-react should properly extend parent rules: parserOptions 1`] = `
 Object {
