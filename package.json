@@ -10,21 +10,30 @@
   "jest": {
     "testEnvironment": "node"
   },
+  "lint-staged": {
+    "*.js": [
+      "js-scripts lint --fix",
+      "js-scripts reformat",
+      "git add"
+    ]
+  },
   "scripts": {
     "all": "yarn reformat && yarn lint --fix && yarn test --no-watch",
     "test": "jest --watch",
-    "lint": "eslint \"packages/**/*.js\"",
-    "reformat": "prettier --write \"{*,**/*}.{js,md,json}\"",
-    "ci":
-      "yarn reformat -l --no-write && yarn lint && yarn test --ci --no-watch"
+    "lint": "js-scripts lint",
+    "precommit": "lint-staged",
+    "reformat": "js-scripts reformat",
+    "ci": "yarn reformat -l && yarn lint && yarn test --ci --no-watch"
   },
   "devDependencies": {
     "eslint": "^4.19.1",
     "jest": "^22.4.3",
     "lerna": "^2.11.0",
+    "lint-staged": "^7.1.2",
     "prettier": "^1.12.1"
   },
   "workspaces": [
+    "packages/js-scripts",
     "packages/eslint-test-tools",
     "packages/eslint-config",
     "packages/eslint-config-base",
