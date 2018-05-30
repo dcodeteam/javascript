@@ -20,6 +20,7 @@
     "cross-spawn": "^6.0.5",
     "eslint": "^4.19.1",
     "globby": "^8.0.1",
+    "ignore": "^3.3.8",
     "import-sort": "^4.2.0",
     "import-sort-cli": "^4.2.0",
     "import-sort-parser-babylon": "^4.2.0",

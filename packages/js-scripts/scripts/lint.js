@@ -8,7 +8,7 @@ const createContext = require("../utils/createContext");
 const { args, patterns } = createContext(process.argv.slice(2));
 
 const eslintCliPath = resolveBin("eslint");
-const files = resolveFiles(patterns, "**/*.{js,jsx,ts,tsx}");
+const files = resolveFiles(patterns, "**/*.{js,jsx,ts,tsx}", [".gitignore"]);
 
 if (patterns.length > 0 && files.length === 0) {
   console.warn("Can not find files for pattern:\n %s", patterns.join("\n "));

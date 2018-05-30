@@ -2,14 +2,36 @@
 
 const path = require("path");
 const glob = require("globby");
+const ignore = require("ignore");
+const resolveIgnoreFile = require("./resolveIgnoreFile");
 
-module.exports = function resolveFiles(patterns, fallbackPatterns) {
+function filterOutIgnored(paths, ignoreFiles) {
+  if (Array.isArray(ignoreFiles)) {
+    const ignorePatterns = ignoreFiles.map(resolveIgnoreFile).filter(Boolean);
+
+    if (ignorePatterns.length > 0) {
+      return ignore()
+        .add(ignorePatterns.join("\n"))
+        .filter(paths);
+    }
+  }
+
+  return paths;
+}
+
+module.exports = function resolveFiles(
+  patterns,
+  fallbackPatterns,
+  ignoreFiles,
+) {
   const filePatterns =
     patterns && patterns.length > 0 ? patterns : fallbackPatterns;
 
-  return glob
-    .sync(filePatterns, {
-      ignore: ["**/node_modules/**"],
-    })
-    .map(x => path.resolve(x));
+  const files = glob.sync(filePatterns, {
+    ignore: ["**/node_modules/**"],
+  });
+
+  const filtered = filterOutIgnored(files, ignoreFiles);
+
+  return filtered.map(x => path.resolve(x));
 };
