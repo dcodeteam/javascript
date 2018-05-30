@@ -3,6 +3,9 @@
 const fs = require("fs");
 
 const { sortImports } = require("import-sort");
+const { default: style } = require("import-sort-style-module");
+const babylonParser = require("import-sort-parser-babylon");
+const typescriptParser = require("import-sort-parser-typescript");
 
 const spawn = require("../utils/spawn");
 const resolveBin = require("../utils/resolveBin");
@@ -14,6 +17,7 @@ const { params, patterns } = createContext(process.argv.slice(2));
 const files = resolveFiles(
   patterns,
   "**/*.{js,jsx,ts,tsx,md,json,css,scss,less}",
+  [".gitignore", ".prettierignore"],
 );
 
 const diff = [];
@@ -21,12 +25,11 @@ const write = !params.l;
 
 if (files.length > 0) {
   files.forEach(x => {
-    const { default: style } = require("import-sort-style-module");
     const parser =
       x.endsWith(".js") || x.endsWith(".jsx")
-        ? require("import-sort-parser-babylon")
+        ? babylonParser
         : x.endsWith(".ts") || x.endsWith(".tsx")
-          ? require("import-sort-parser-typescript")
+          ? typescriptParser
           : null;
 
     if (parser) {
