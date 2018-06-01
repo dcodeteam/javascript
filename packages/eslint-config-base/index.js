@@ -42,14 +42,6 @@ module.exports = {
     // eslint-plugin-import
     //
 
-    // TODO: Move to `eslint-config`.
-    "import/no-internal-modules": [
-      "error",
-      {
-        allow: ["**/*.css", "**/*.scss"],
-      },
-    ],
-
     // TODO: Check and remove or explain.
     "import/export": "off",
 

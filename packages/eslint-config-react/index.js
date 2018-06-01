@@ -7,6 +7,12 @@ module.exports = {
 
   rules: {
     //
+    // eslint-plugin-import
+    //
+
+    "import/no-internal-modules": ["error", {}],
+
+    //
     // eslint-plugin-react
     //
 

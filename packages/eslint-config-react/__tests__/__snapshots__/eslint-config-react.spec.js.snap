@@ -1177,12 +1177,7 @@ Object {
   ],
   "import/no-internal-modules": Array [
     "error",
-    Object {
-      "allow": Array [
-        "**/*.css",
-        "**/*.scss",
-      ],
-    },
+    Object {},
   ],
   "import/no-mutable-exports": "error",
   "import/no-named-as-default": "error",

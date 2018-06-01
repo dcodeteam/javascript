@@ -372,12 +372,9 @@ Object {
     },
   ],
   "import/no-internal-modules": Array [
-    "error",
+    "off",
     Object {
-      "allow": Array [
-        "**/*.css",
-        "**/*.scss",
-      ],
+      "allow": Array [],
     },
   ],
   "import/no-mutable-exports": "error",
