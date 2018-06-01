@@ -38,9 +38,6 @@ module.exports = {
     // We prefer TypeScript `noUnusedLocals` option.
     "no-unused-vars": ["off", {}],
 
-    // Sometimes it's really
-    "no-cond-assign": ["off", {}], // TODO: Enable with default options.
-
     // Disable to ignore TypeScript constructor assignment.
     "no-useless-constructor": "off",
 

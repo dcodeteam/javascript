@@ -32,6 +32,9 @@ module.exports = {
     // Forbid to use built in logger.
     "no-console": "error",
 
+    // Override `airbnb-eslint-config` defaults.
+    "no-cond-assign": ["error", "except-parens"],
+
     // Allow empty catch blocks.
     "no-empty": ["error", { allowEmptyCatch: true }],
 

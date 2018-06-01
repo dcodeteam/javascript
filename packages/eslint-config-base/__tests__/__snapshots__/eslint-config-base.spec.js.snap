@@ -596,7 +596,7 @@ Object {
   "no-compare-neg-zero": "error",
   "no-cond-assign": Array [
     "error",
-    "always",
+    "except-parens",
   ],
   "no-confusing-arrow": Array [
     0,

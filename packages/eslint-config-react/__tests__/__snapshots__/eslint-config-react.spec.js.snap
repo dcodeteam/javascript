@@ -1562,8 +1562,8 @@ Object {
   "no-comma-dangle": "off",
   "no-compare-neg-zero": "error",
   "no-cond-assign": Array [
-    "off",
-    Object {},
+    "error",
+    "except-parens",
   ],
   "no-confusing-arrow": Array [
     0,
