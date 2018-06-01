@@ -57,9 +57,6 @@ module.exports = {
     // eslint-plugin-typescript
     //
 
-    // TODO: Enable this.
-    "typescript/no-var-requires": "off",
-
     // TODO: https://github.com/nzakas/eslint-plugin-typescript/pull/125
     "typescript/explicit-function-return-type": "off",
 
@@ -81,6 +78,9 @@ module.exports = {
 
     // We want to avoid usage of `any` type as much as possible.
     "typescript/no-explicit-any": "error",
+
+    // Forbid raw usage of require.
+    "typescript/no-var-requires": "error",
 
     // Only PascalCase class names.
     "typescript/class-name-casing": "error",

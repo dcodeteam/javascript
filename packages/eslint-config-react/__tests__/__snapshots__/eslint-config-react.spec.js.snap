@@ -2461,7 +2461,7 @@ Object {
       "functions": false,
     },
   ],
-  "typescript/no-var-requires": "off",
+  "typescript/no-var-requires": "error",
   "typescript/prefer-namespace-keyword": "error",
   "typescript/type-annotation-spacing": "off",
   "unicode-bom": Array [
