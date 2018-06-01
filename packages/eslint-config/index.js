@@ -32,7 +32,7 @@ module.exports = {
     // TODO: https://github.com/nzakas/eslint-plugin-typescript/issues/new
     "no-multi-str": "off",
 
-    // Typescript covers this.
+    // Typescript covers these.
     "no-cond-assign": ["off", {}],
     "no-unused-vars": ["off", {}],
     "consistent-return": "off",
