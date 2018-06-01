@@ -32,16 +32,20 @@ module.exports = {
     // TODO: https://github.com/nzakas/eslint-plugin-typescript/issues/new
     "no-multi-str": "off",
 
-    // With class approach we sometimes just want to use it's methods.
-    "class-methods-use-this": ["off", {}],
+    // We do not need this since TypeScript has type checks.
+    "consistent-return": "off",
+
+    // We prefer TypeScript `noUnusedLocals` option.
+    "no-unused-vars": ["off", {}],
+
+    // Sometimes it's really
+    "no-cond-assign": ["off", {}], // TODO: Enable with default options.
 
     // Disable to ignore TypeScript constructor assignment.
     "no-useless-constructor": "off",
 
-    // Typescript covers these.
-    "no-cond-assign": ["off", {}],
-    "no-unused-vars": ["off", {}],
-    "consistent-return": "off",
+    // With class approach we sometimes just want to use it's methods.
+    "class-methods-use-this": ["off", {}],
 
     //
     // eslint-plugin-import
@@ -56,9 +60,59 @@ module.exports = {
     // eslint-plugin-typescript
     //
 
+    // TODO: Enable this.
+    "typescript/no-explicit-any": "off",
+
+    // TODO: Enable this.
+    "typescript/no-var-requires": "off",
+
     // TODO: https://github.com/nzakas/eslint-plugin-typescript/pull/125
     "typescript/explicit-function-return-type": "off",
 
+    // TODO: It would be good to follow some consistent structure.
+    "typescript/member-ordering": "off",
+
+    // It's not actually helping.
+    "typescript/member-naming": "error", // TODO: Disable.
+
+    // This rule is useless without core `no-unused-vars`.
+    "typescript/no-unused-vars": "error", // TODO: Disable
+
+    // Just use Prettier ©
+    "typescript/member-delimiter-style": "error", // TODO: Disable.
+    "typescript/type-annotation-spacing": "error", // TODO: Disable.
+
+    // It helps a lot and should be used.
+    "typescript/no-non-null-assertion": "off",
+
+    // Only PascalCase class names.
+    "typescript/class-name-casing": "error",
+
+    // We want to declare arrays consistently.
+    "typescript/no-array-constructor": "error",
+
+    // Forbid usage of old `module` declaration keyword.
+    "typescript/prefer-namespace-keyword": "error",
+
+    // All references should be imported.
+    "typescript/no-triple-slash-reference": "error",
+
+    // All class members has to be annotated.
+    "typescript/explicit-member-accessibility": "error",
+
+    // Do not mix function overloads
+    "typescript/adjacent-overload-signatures": "error",
+
+    // We want to keep consistent type casting.
+    "typescript/no-angle-bracket-type-assertion": "error",
+
+    // Interface names should have same style as class names and type names.
+    "typescript/interface-name-prefix": "error", // TODO: Set option.
+
+    // Add TypeScript to core `no-use-before-define`.
+    "typescript/no-use-before-define": ["error", { functions: false }],
+
+    // Do not allow to create obsolete aliases.
     "typescript/no-type-alias": [
       "error",
       {
@@ -69,24 +123,8 @@ module.exports = {
       },
     ],
 
-    "typescript/no-explicit-any": "off",
-    "typescript/member-ordering": "off",
-    "typescript/no-var-requires": "off",
-    "typescript/no-non-null-assertion": "off",
-
-    "typescript/explicit-member-accessibility": "error",
-    "typescript/adjacent-overload-signatures": "error",
-    "typescript/class-name-casing": "error",
-    "typescript/interface-name-prefix": "error",
-    "typescript/member-delimiter-style": "error",
-    "typescript/member-naming": "error",
-    "typescript/no-angle-bracket-type-assertion": "error",
-    "typescript/no-array-constructor": "error",
+    // We use namespaces only inside type definitions.
+    // TODO: Enhance with `{ allowDeclarations: false, allowDefinitionFiles: true }`
     "typescript/no-namespace": "error",
-    "typescript/no-triple-slash-reference": "error",
-    "typescript/no-unused-vars": "error",
-    "typescript/no-use-before-define": ["error", { functions: false }],
-    "typescript/prefer-namespace-keyword": "error",
-    "typescript/type-annotation-spacing": "error",
   },
 };
