@@ -42,9 +42,6 @@ module.exports = {
     // eslint-plugin-import
     //
 
-    // TODO: Check and remove or explain.
-    "import/no-extraneous-dependencies": ["off", {}],
-
     // We use `sort-import` to deal with styles.
     "import/first": ["off", "absolute-first"],
 
