@@ -1661,7 +1661,15 @@ Object {
   "typescript/no-namespace": "error",
   "typescript/no-non-null-assertion": "off",
   "typescript/no-triple-slash-reference": "error",
-  "typescript/no-type-alias": "off",
+  "typescript/no-type-alias": Array [
+    "error",
+    Object {
+      "allowAliases": "always",
+      "allowCallbacks": "always",
+      "allowLiterals": "never",
+      "allowMappedTypes": "always",
+    },
+  ],
   "typescript/no-unused-vars": "error",
   "typescript/no-use-before-define": Array [
     "error",

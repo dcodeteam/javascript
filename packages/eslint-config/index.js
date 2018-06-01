@@ -59,7 +59,16 @@ module.exports = {
     // TODO: https://github.com/nzakas/eslint-plugin-typescript/pull/125
     "typescript/explicit-function-return-type": "off",
 
-    "typescript/no-type-alias": "off",
+    "typescript/no-type-alias": [
+      "error",
+      {
+        allowAliases: "always",
+        allowCallbacks: "always",
+        allowLiterals: "never",
+        allowMappedTypes: "always",
+      },
+    ],
+
     "typescript/no-explicit-any": "off",
     "typescript/member-ordering": "off",
     "typescript/no-var-requires": "off",
