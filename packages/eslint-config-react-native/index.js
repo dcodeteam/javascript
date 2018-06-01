@@ -15,9 +15,13 @@ module.exports = {
     // eslint-plugin-react-native
     //
 
+    // Keep code clean.
     "react-native/no-unused-styles": "error",
-    "react-native/split-platform-components": "error",
+    // Prefer usage of `StyleSheet`.
     "react-native/no-inline-styles": "error",
+    // Use theme constants..
     "react-native/no-color-literals": "error",
+    // Keep app consistent.
+    "react-native/split-platform-components": "error",
   },
 };
