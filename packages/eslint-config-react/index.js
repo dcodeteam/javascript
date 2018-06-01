@@ -17,11 +17,13 @@ module.exports = {
     //
 
     "react/sort-comp": ["off", {}],
+    "react/prop-types": ["off", {}],
+    "react/prefer-stateless-function": ["off", {}],
+
     "react/jsx-no-undef": "off",
     "react/jsx-filename-extension": ["off", {}],
     "react/jsx-max-props-per-line": ["off", {}],
     "react/jsx-first-prop-new-line": ["off", {}],
-    "react/prefer-stateless-function": ["off", {}],
     "react/jsx-boolean-value": ["error", "always"],
 
     //

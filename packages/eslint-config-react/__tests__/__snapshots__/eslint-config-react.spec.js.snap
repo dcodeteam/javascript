@@ -2275,12 +2275,8 @@ Object {
     Object {},
   ],
   "react/prop-types": Array [
-    "error",
-    Object {
-      "customValidators": Array [],
-      "ignore": Array [],
-      "skipUndeclared": false,
-    },
+    "off",
+    Object {},
   ],
   "react/react-in-jsx-scope": "error",
   "react/require-default-props": "error",
