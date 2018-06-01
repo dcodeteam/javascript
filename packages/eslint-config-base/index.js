@@ -32,10 +32,6 @@ module.exports = {
     // Forbid to use built in logger.
     "no-console": "error",
 
-    // TODO: Move to `eslint-config`.
-    // With class approach we sometimes just want to use it's methods.
-    "class-methods-use-this": ["off", {}],
-
     // Allow empty catch blocks.
     "no-empty": ["error", { allowEmptyCatch: true }],
 

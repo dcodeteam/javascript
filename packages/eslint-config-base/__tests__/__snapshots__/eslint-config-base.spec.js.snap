@@ -213,8 +213,10 @@ Object {
     },
   ],
   "class-methods-use-this": Array [
-    "off",
-    Object {},
+    "error",
+    Object {
+      "exceptMethods": Array [],
+    },
   ],
   "comma-dangle": Array [
     "off",

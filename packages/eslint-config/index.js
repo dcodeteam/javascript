@@ -32,6 +32,9 @@ module.exports = {
     // TODO: https://github.com/nzakas/eslint-plugin-typescript/issues/new
     "no-multi-str": "off",
 
+    // With class approach we sometimes just want to use it's methods.
+    "class-methods-use-this": ["off", {}],
+
     // Typescript covers these.
     "no-cond-assign": ["off", {}],
     "no-unused-vars": ["off", {}],
