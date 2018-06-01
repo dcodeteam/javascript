@@ -1193,8 +1193,8 @@ Object {
     "error",
     "never",
   ],
-  "typescript/member-delimiter-style": "error",
-  "typescript/member-naming": "error",
+  "typescript/member-delimiter-style": "off",
+  "typescript/member-naming": "off",
   "typescript/member-ordering": "off",
   "typescript/no-angle-bracket-type-assertion": "error",
   "typescript/no-array-constructor": "error",
@@ -1217,7 +1217,7 @@ Object {
       "allowMappedTypes": "always",
     },
   ],
-  "typescript/no-unused-vars": "error",
+  "typescript/no-unused-vars": "off",
   "typescript/no-use-before-define": Array [
     "error",
     Object {
@@ -1226,7 +1226,7 @@ Object {
   ],
   "typescript/no-var-requires": "off",
   "typescript/prefer-namespace-keyword": "error",
-  "typescript/type-annotation-spacing": "error",
+  "typescript/type-annotation-spacing": "off",
   "unicode-bom": Array [
     "off",
     "never",

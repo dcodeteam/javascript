@@ -70,14 +70,14 @@ module.exports = {
     "typescript/member-ordering": "off",
 
     // It's not actually helping.
-    "typescript/member-naming": "error", // TODO: Disable.
+    "typescript/member-naming": "off",
 
     // This rule is useless without core `no-unused-vars`.
-    "typescript/no-unused-vars": "error", // TODO: Disable
+    "typescript/no-unused-vars": "off",
 
     // Just use Prettier ©
-    "typescript/member-delimiter-style": "error", // TODO: Disable.
-    "typescript/type-annotation-spacing": "error", // TODO: Disable.
+    "typescript/member-delimiter-style": "off",
+    "typescript/type-annotation-spacing": "off",
 
     // It helps a lot and should be used.
     "typescript/no-non-null-assertion": "off",
