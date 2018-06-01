@@ -20,11 +20,6 @@ module.exports = {
     // TODO: Debatable rule.
     "react/jsx-boolean-value": ["error", "always"],
 
-    // TODO: Remove, it already covers by `prettier/react`.
-    "react/jsx-max-props-per-line": ["off", {}],
-    // TODO: Remove, it already covers by `prettier/react`.
-    "react/jsx-first-prop-new-line": ["off", {}],
-
     // It's really hard to follow these rules in real life big applications.
     "react/sort-comp": ["off", {}],
 

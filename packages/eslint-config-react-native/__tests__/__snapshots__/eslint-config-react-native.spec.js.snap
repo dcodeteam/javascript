@@ -1367,7 +1367,7 @@ Object {
   ],
   "react/jsx-first-prop-new-line": Array [
     "off",
-    Object {},
+    "multiline-multiprop",
   ],
   "react/jsx-handler-names": Array [
     "off",
@@ -1387,7 +1387,10 @@ Object {
   "react/jsx-key": "off",
   "react/jsx-max-props-per-line": Array [
     "off",
-    Object {},
+    Object {
+      "maximum": 1,
+      "when": "multiline",
+    },
   ],
   "react/jsx-no-bind": Array [
     "error",
