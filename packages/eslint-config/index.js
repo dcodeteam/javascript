@@ -44,6 +44,13 @@ module.exports = {
     "consistent-return": "off",
 
     //
+    // eslint-plugin-import
+    //
+
+    // TypeScript already resolves imports.
+    "import/no-unresolved": ["off", {}],
+
+    //
     // eslint-plugin-typescript
     //
 

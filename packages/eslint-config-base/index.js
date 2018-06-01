@@ -43,9 +43,6 @@ module.exports = {
     //
 
     // TODO: Move to `eslint-config`.
-    "import/no-unresolved": ["off", {}],
-
-    // TODO: Move to `eslint-config`.
     "import/no-internal-modules": [
       "error",
       {

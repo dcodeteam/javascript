@@ -389,8 +389,11 @@ Object {
   "import/no-restricted-paths": "off",
   "import/no-unassigned-import": "off",
   "import/no-unresolved": Array [
-    "off",
-    Object {},
+    "error",
+    Object {
+      "caseSensitive": true,
+      "commonjs": true,
+    },
   ],
   "import/no-webpack-loader-syntax": "error",
   "import/order": Array [
