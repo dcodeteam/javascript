@@ -20,6 +20,15 @@ module.exports = {
     // Just use Prettier ©
     "no-nested-ternary": "off",
 
+    // Remind about technical debt.
+    "no-warning-comments": [
+      "warn",
+      {
+        location: "anywhere",
+        terms: ["todo", "fixme"],
+      },
+    ],
+
     // D:CODE Specific
     "no-console": "error",
     "no-useless-constructor": "off",

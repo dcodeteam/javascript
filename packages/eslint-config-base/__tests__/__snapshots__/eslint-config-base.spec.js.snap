@@ -1008,13 +1008,12 @@ Object {
   "no-var": "error",
   "no-void": "error",
   "no-warning-comments": Array [
-    "off",
+    "warn",
     Object {
-      "location": "start",
+      "location": "anywhere",
       "terms": Array [
         "todo",
         "fixme",
-        "xxx",
       ],
     },
   ],
