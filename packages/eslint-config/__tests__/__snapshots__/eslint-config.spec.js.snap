@@ -1189,7 +1189,10 @@ Object {
   "typescript/class-name-casing": "error",
   "typescript/explicit-function-return-type": "off",
   "typescript/explicit-member-accessibility": "error",
-  "typescript/interface-name-prefix": "error",
+  "typescript/interface-name-prefix": Array [
+    "error",
+    "never",
+  ],
   "typescript/member-delimiter-style": "error",
   "typescript/member-naming": "error",
   "typescript/member-ordering": "off",

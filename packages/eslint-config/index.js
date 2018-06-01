@@ -104,7 +104,7 @@ module.exports = {
     "typescript/no-angle-bracket-type-assertion": "error",
 
     // Interface names should have same style as class names and type names.
-    "typescript/interface-name-prefix": "error", // TODO: Set option.
+    "typescript/interface-name-prefix": ["error", "never"],
 
     // Add TypeScript to core `no-use-before-define`.
     "typescript/no-use-before-define": ["error", { functions: false }],
