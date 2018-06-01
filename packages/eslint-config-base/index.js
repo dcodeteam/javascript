@@ -29,29 +29,50 @@ module.exports = {
       },
     ],
 
-    // D:CODE Specific
+    // Forbid to use built in logger.
     "no-console": "error",
-    "no-useless-constructor": "off",
+
+    // TODO: Move to `eslint-config`.
+    // With class approach we sometimes just want to use it's methods.
     "class-methods-use-this": ["off", {}],
+
+    // Allow empty catch blocks.
     "no-empty": ["error", { allowEmptyCatch: true }],
+
+    // It's ok to use hoisted functions before their actual declaration.
     "no-use-before-define": ["error", { functions: false }],
+
+    // Disable to ignore TypeScript constructor assignment.
+    "no-useless-constructor": "off",
 
     //
     // eslint-plugin-import
     //
 
-    "import/first": ["off", "absolute-first"],
-    "import/export": "off",
-    "import/extensions": ["off", "always", {}],
+    // TODO: Move to `eslint-config`.
     "import/no-unresolved": ["off", {}],
-    "import/prefer-default-export": "off",
-    "import/no-extraneous-dependencies": ["off", {}],
 
+    // TODO: Move to `eslint-config`.
     "import/no-internal-modules": [
       "error",
       {
         allow: ["**/*.css", "**/*.scss"],
       },
     ],
+
+    // TODO: Check and remove or explain.
+    "import/export": "off",
+
+    // TODO: Check and remove or explain.
+    "import/extensions": ["off", "always", {}],
+
+    // TODO: Check and remove or explain.
+    "import/no-extraneous-dependencies": ["off", {}],
+
+    // We use `sort-import` to deal with styles.
+    "import/first": ["off", "absolute-first"],
+
+    // We prefer named exports.
+    "import/prefer-default-export": "off",
   },
 };
