@@ -35,6 +35,9 @@ module.exports = {
     // With class approach we sometimes just want to use it's methods.
     "class-methods-use-this": ["off", {}],
 
+    // Disable to ignore TypeScript constructor assignment.
+    "no-useless-constructor": "off",
+
     // Typescript covers these.
     "no-cond-assign": ["off", {}],
     "no-unused-vars": ["off", {}],

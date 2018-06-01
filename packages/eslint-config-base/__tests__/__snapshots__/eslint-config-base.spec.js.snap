@@ -996,7 +996,7 @@ Object {
   "no-useless-call": "off",
   "no-useless-computed-key": "error",
   "no-useless-concat": "error",
-  "no-useless-constructor": "off",
+  "no-useless-constructor": "error",
   "no-useless-escape": "error",
   "no-useless-rename": Array [
     "error",

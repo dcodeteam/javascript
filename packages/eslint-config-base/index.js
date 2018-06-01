@@ -38,9 +38,6 @@ module.exports = {
     // It's ok to use hoisted functions before their actual declaration.
     "no-use-before-define": ["error", { functions: false }],
 
-    // Disable to ignore TypeScript constructor assignment.
-    "no-useless-constructor": "off",
-
     //
     // eslint-plugin-import
     //
