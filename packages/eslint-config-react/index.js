@@ -10,26 +10,41 @@ module.exports = {
     // eslint-plugin-import
     //
 
+    // Minimize bundle size.
     "import/no-internal-modules": ["error", {}],
 
     //
     // eslint-plugin-react
     //
 
+    // TODO: Debatable rule.
+    "react/jsx-boolean-value": ["error", "always"],
+
+    // TODO: Remove, it already covers by `prettier/react`.
+    "react/jsx-max-props-per-line": ["off", {}],
+    // TODO: Remove, it already covers by `prettier/react`.
+    "react/jsx-first-prop-new-line": ["off", {}],
+
+    // It's really hard to follow these rules in real life big applications.
     "react/sort-comp": ["off", {}],
+
+    // TypeScript covers `prop-types` functionality.
     "react/prop-types": ["off", {}],
+
+    // Stateless functions are not there yet in case of speed.
     "react/prefer-stateless-function": ["off", {}],
 
+    // TypeScript covers this functionality.
     "react/jsx-no-undef": "off",
+
+    // TypeScript already resolves imports.
     "react/jsx-filename-extension": ["off", {}],
-    "react/jsx-max-props-per-line": ["off", {}],
-    "react/jsx-first-prop-new-line": ["off", {}],
-    "react/jsx-boolean-value": ["error", "always"],
 
     //
     // eslint-plugin-jsx-a11y
     //
 
+    // Allow custom `Label` component..
     "jsx-a11y/label-has-for": [
       "error",
       {
@@ -38,6 +53,7 @@ module.exports = {
       },
     ],
 
+    // Ignore `Link` component added by `airbnb-config`.
     "jsx-a11y/anchor-is-valid": [
       "error",
       {
