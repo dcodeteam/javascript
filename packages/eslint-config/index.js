@@ -49,6 +49,7 @@ module.exports = {
 
     // TypeScript already resolves imports.
     "import/no-unresolved": ["off", {}],
+    "import/extensions": ["off", "always", {}],
 
     //
     // eslint-plugin-typescript

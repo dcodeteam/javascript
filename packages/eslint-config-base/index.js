@@ -43,9 +43,6 @@ module.exports = {
     //
 
     // TODO: Check and remove or explain.
-    "import/extensions": ["off", "always", {}],
-
-    // TODO: Check and remove or explain.
     "import/no-extraneous-dependencies": ["off", {}],
 
     // We use `sort-import` to deal with styles.

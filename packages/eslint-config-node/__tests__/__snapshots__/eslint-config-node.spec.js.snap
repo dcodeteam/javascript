@@ -328,9 +328,12 @@ Object {
   "import/default": "off",
   "import/export": "error",
   "import/extensions": Array [
-    "off",
+    "error",
     "always",
-    Object {},
+    Object {
+      "js": "never",
+      "jsx": "never",
+    },
   ],
   "import/first": Array [
     "off",
