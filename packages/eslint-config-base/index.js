@@ -43,9 +43,6 @@ module.exports = {
     //
 
     // TODO: Check and remove or explain.
-    "import/export": "off",
-
-    // TODO: Check and remove or explain.
     "import/extensions": ["off", "always", {}],
 
     // TODO: Check and remove or explain.

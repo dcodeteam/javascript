@@ -355,7 +355,7 @@ Object {
   "id-match": "off",
   "implicit-arrow-linebreak": "off",
   "import/default": "off",
-  "import/export": "off",
+  "import/export": "error",
   "import/extensions": Array [
     "off",
     "always",
