@@ -58,9 +58,6 @@ module.exports = {
     //
 
     // TODO: Enable this.
-    "typescript/no-explicit-any": "off",
-
-    // TODO: Enable this.
     "typescript/no-var-requires": "off",
 
     // TODO: https://github.com/nzakas/eslint-plugin-typescript/pull/125
@@ -81,6 +78,9 @@ module.exports = {
 
     // It helps a lot and should be used.
     "typescript/no-non-null-assertion": "off",
+
+    // We want to avoid usage of `any` type as much as possible.
+    "typescript/no-explicit-any": "error",
 
     // Only PascalCase class names.
     "typescript/class-name-casing": "error",
