@@ -1196,7 +1196,13 @@ Object {
   "typescript/no-angle-bracket-type-assertion": "error",
   "typescript/no-array-constructor": "error",
   "typescript/no-explicit-any": "off",
-  "typescript/no-namespace": "error",
+  "typescript/no-namespace": Array [
+    "error",
+    Object {
+      "allowDeclarations": false,
+      "allowDefinitionFiles": true,
+    },
+  ],
   "typescript/no-non-null-assertion": "off",
   "typescript/no-triple-slash-reference": "error",
   "typescript/no-type-alias": Array [

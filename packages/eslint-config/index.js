@@ -109,6 +109,12 @@ module.exports = {
     // Add TypeScript to core `no-use-before-define`.
     "typescript/no-use-before-define": ["error", { functions: false }],
 
+    // We use namespaces only inside type definitions.
+    "typescript/no-namespace": [
+      "error",
+      { allowDeclarations: false, allowDefinitionFiles: true },
+    ],
+
     // Do not allow to create obsolete aliases.
     "typescript/no-type-alias": [
       "error",
@@ -119,9 +125,5 @@ module.exports = {
         allowMappedTypes: "always",
       },
     ],
-
-    // We use namespaces only inside type definitions.
-    // TODO: Enhance with `{ allowDeclarations: false, allowDefinitionFiles: true }`
-    "typescript/no-namespace": "error",
   },
 };
