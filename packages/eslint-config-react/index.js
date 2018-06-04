@@ -20,6 +20,9 @@ module.exports = {
     // TODO: Debatable rule.
     "react/jsx-boolean-value": ["error", "always"],
 
+    // Override `airbnb-eslint-config` warnings as errors.
+    "react/no-danger": "error",
+
     // It's really hard to follow these rules in real life big applications.
     "react/sort-comp": ["off", {}],
 

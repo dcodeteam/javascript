@@ -1465,7 +1465,7 @@ Object {
   ],
   "react/no-array-index-key": "error",
   "react/no-children-prop": "error",
-  "react/no-danger": "warn",
+  "react/no-danger": "error",
   "react/no-danger-with-children": "error",
   "react/no-deprecated": Array [
     "error",
