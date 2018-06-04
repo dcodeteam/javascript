@@ -30,7 +30,12 @@ module.exports = {
     ],
 
     // Forbid to use built in logger.
+
+    // Override `airbnb-eslint-config-base` warnings as errors.
+    "no-alert": "error",
     "no-console": "error",
+    "func-names": ["error", "always"],
+    "no-constant-condition": "error",
 
     // Override `airbnb-eslint-config` defaults.
     "no-cond-assign": ["error", "except-parens"],
