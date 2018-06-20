@@ -16,6 +16,9 @@
   "publishConfig": {
     "access": "public"
   },
+  "engines": {
+    "node": ">=8.0.0"
+  },
   "dependencies": {
     "cross-spawn": "^6.0.5",
     "globby": "^8.0.1",

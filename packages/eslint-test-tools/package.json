@@ -3,6 +3,9 @@
   "name": "@dc0de/eslint-test-tools",
   "version": "0.0.15",
   "main": "./index.js",
+  "engines": {
+    "node": ">=8.0.0"
+  },
   "dependencies": {
     "eslint": "^4.19.0"
   }
