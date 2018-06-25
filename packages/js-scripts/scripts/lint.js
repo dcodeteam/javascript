@@ -45,7 +45,7 @@ async function lintStyle({ fix, files }) {
   } catch (e) {}
 
   if (stylelintPath) {
-    spawn("node", [stylelintPath, fix ? "--fix" : "", ...files]);
+    spawn("node", [stylelintPath, fix ? "--fix" : "--quiet", ...files]);
   }
 }
 
