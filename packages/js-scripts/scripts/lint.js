@@ -7,8 +7,8 @@ const resolveFiles = require("../utils/resolveFiles");
 module.exports = { lint };
 
 const codeFilesPattern = "**/*.{js,jsx,ts,tsx}";
-const styleFilesPattern = "**/*.{css,sass,less}";
-const textFilesPattern = "**/*.{js,jsx,ts,tsx,md,json,css,scss,less}";
+const styleFilesPattern = "**/*.{css,sass,scss,less}";
+const textFilesPattern = "**/*.{js,jsx,ts,tsx,md,json,css,sass,scss,less}";
 
 async function lint({ fix }) {
   const [codeFiles, styleFiles, textFiles] = await Promise.all([
