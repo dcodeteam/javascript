@@ -19,15 +19,8 @@ function filterOutIgnored(paths, ignoreFiles) {
   return paths;
 }
 
-module.exports = function resolveFiles(
-  patterns,
-  fallbackPatterns,
-  ignoreFiles,
-) {
-  const filePatterns =
-    patterns && patterns.length > 0 ? patterns : fallbackPatterns;
-
-  const files = glob.sync(filePatterns, {
+module.exports = async function resolveFiles(patterns, ignoreFiles) {
+  const files = await glob(patterns, {
     ignore: ["**/node_modules/**"],
   });
 
