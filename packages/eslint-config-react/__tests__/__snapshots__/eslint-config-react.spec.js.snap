@@ -57,6 +57,9 @@ Object {
   "AudioParam": false,
   "AudioProcessingEvent": false,
   "AudioScheduledSourceNode": false,
+  "AudioWorkletGlobalScope ": false,
+  "AudioWorkletNode": false,
+  "AudioWorkletProcessor": false,
   "AutocompleteErrorEvent": false,
   "BarProp": false,
   "BaseAudioContext": false,
@@ -863,6 +866,7 @@ Object {
   "process": false,
   "prompt": false,
   "propertyIsEnumerable": false,
+  "registerProcessor": false,
   "removeEventListener": false,
   "requestAnimationFrame": false,
   "requestIdleCallback": false,
@@ -960,7 +964,12 @@ Object {
     "off",
     "never",
   ],
-  "array-callback-return": "error",
+  "array-callback-return": Array [
+    "error",
+    Object {
+      "allowImplicit": true,
+    },
+  ],
   "array-element-newline": Array [
     "off",
     Object {
@@ -1048,6 +1057,21 @@ Object {
   "comma-style": Array [
     "off",
     "last",
+    Object {
+      "exceptions": Object {
+        "ArrayExpression": false,
+        "ArrayPattern": false,
+        "ArrowFunctionExpression": false,
+        "CallExpression": false,
+        "FunctionDeclaration": false,
+        "FunctionExpression": false,
+        "ImportDeclaration": false,
+        "NewExpression": false,
+        "ObjectExpression": false,
+        "ObjectPattern": false,
+        "VariableDeclaration": false,
+      },
+    },
   ],
   "complexity": Array [
     "off",
@@ -1113,7 +1137,7 @@ Object {
   ],
   "function-paren-newline": Array [
     "off",
-    "multiline",
+    "consistent",
   ],
   "generator-star": "off",
   "generator-star-spacing": Array [
@@ -1135,9 +1159,20 @@ Object {
   "id-blacklist": "off",
   "id-length": "off",
   "id-match": "off",
-  "implicit-arrow-linebreak": "off",
+  "implicit-arrow-linebreak": Array [
+    "off",
+    "beside",
+  ],
   "import/default": "off",
+  "import/dynamic-import-chunkname": Array [
+    "off",
+    Object {
+      "importFunctions": Array [],
+      "webpackChunknameFormat": "[0-9a-zA-Z-_/.]+",
+    },
+  ],
   "import/export": "error",
+  "import/exports-last": "off",
   "import/extensions": Array [
     "off",
     "always",
@@ -1147,6 +1182,7 @@ Object {
     "off",
     "absolute-first",
   ],
+  "import/group-exports": "off",
   "import/imports-first": "off",
   "import/max-dependencies": Array [
     "off",
@@ -1154,7 +1190,7 @@ Object {
       "max": 10,
     },
   ],
-  "import/named": "off",
+  "import/named": "error",
   "import/namespace": "off",
   "import/newline-after-import": "error",
   "import/no-absolute-path": "error",
@@ -1171,6 +1207,13 @@ Object {
     },
   ],
   "import/no-commonjs": "off",
+  "import/no-cycle": Array [
+    "error",
+    Object {
+      "maxDepth": Infinity,
+    },
+  ],
+  "import/no-default-export": "off",
   "import/no-deprecated": "off",
   "import/no-duplicates": "error",
   "import/no-dynamic-require": "error",
@@ -1189,24 +1232,24 @@ Object {
   "import/no-namespace": "off",
   "import/no-nodejs-modules": "off",
   "import/no-restricted-paths": "off",
+  "import/no-self-import": "error",
   "import/no-unassigned-import": "off",
   "import/no-unresolved": Array [
     "off",
     Object {},
   ],
+  "import/no-useless-path-segments": "error",
   "import/no-webpack-loader-syntax": "error",
   "import/order": Array [
-    "off",
+    "error",
     Object {
       "groups": Array [
-        "builtin",
-        "external",
-        "internal",
-        "parent",
-        "sibling",
-        "index",
+        Array [
+          "builtin",
+          "external",
+          "internal",
+        ],
       ],
-      "newlines-between": "never",
     },
   ],
   "import/prefer-default-export": "off",
@@ -1232,9 +1275,21 @@ Object {
       "SwitchCase": 1,
       "VariableDeclarator": 1,
       "flatTernaryExpressions": false,
+      "ignoreComments": false,
       "ignoredNodes": Array [
         "JSXElement",
-        "JSXElement *",
+        "JSXElement > *",
+        "JSXAttribute",
+        "JSXIdentifier",
+        "JSXNamespacedName",
+        "JSXMemberExpression",
+        "JSXSpreadAttribute",
+        "JSXExpressionContainer",
+        "JSXOpeningElement",
+        "JSXClosingElement",
+        "JSXText",
+        "JSXEmptyExpression",
+        "JSXSpreadChild",
       ],
       "outerIIFEBody": 1,
     },
@@ -1477,7 +1532,7 @@ Object {
     },
   ],
   "lines-between-class-members": Array [
-    "off",
+    "error",
     "always",
     Object {
       "exceptAfterSingleLine": false,
@@ -1590,7 +1645,7 @@ Object {
   "no-else-return": Array [
     "error",
     Object {
-      "allowElseIf": true,
+      "allowElseIf": false,
     },
   ],
   "no-empty": Array [
@@ -1682,12 +1737,40 @@ Object {
       "allowSamePrecedence": false,
       "groups": Array [
         Array [
-          "+",
-          "-",
-          "*",
-          "/",
           "%",
           "**",
+        ],
+        Array [
+          "%",
+          "+",
+        ],
+        Array [
+          "%",
+          "-",
+        ],
+        Array [
+          "%",
+          "*",
+        ],
+        Array [
+          "%",
+          "/",
+        ],
+        Array [
+          "**",
+          "+",
+        ],
+        Array [
+          "**",
+          "-",
+        ],
+        Array [
+          "**",
+          "*",
+        ],
+        Array [
+          "**",
+          "/",
         ],
         Array [
           "&",
@@ -1738,7 +1821,7 @@ Object {
     "off",
     Object {
       "max": 2,
-      "maxEOF": 1,
+      "maxEOF": 0,
     },
   ],
   "no-native-reassign": "off",
@@ -1759,6 +1842,7 @@ Object {
     Object {
       "ignorePropertyModificationsFor": Array [
         "acc",
+        "accumulator",
         "e",
         "ctx",
         "req",
@@ -1783,7 +1867,13 @@ Object {
     "off",
     Object {},
   ],
-  "no-restricted-imports": "off",
+  "no-restricted-imports": Array [
+    "off",
+    Object {
+      "paths": Array [],
+      "patterns": Array [],
+    },
+  ],
   "no-restricted-modules": "off",
   "no-restricted-properties": Array [
     "error",
@@ -1953,10 +2043,26 @@ Object {
   "no-whitespace-before-property": "off",
   "no-with": "error",
   "no-wrap-func": "off",
-  "nonblock-statement-body-position": "off",
+  "nonblock-statement-body-position": Array [
+    "off",
+    "beside",
+    Object {
+      "overrides": Object {},
+    },
+  ],
   "object-curly-newline": Array [
     "off",
     Object {
+      "ExportDeclaration": Object {
+        "consistent": true,
+        "minProperties": 4,
+        "multiline": true,
+      },
+      "ImportDeclaration": Object {
+        "consistent": true,
+        "minProperties": 4,
+        "multiline": true,
+      },
       "ObjectExpression": Object {
         "consistent": true,
         "minProperties": 4,
@@ -1976,7 +2082,7 @@ Object {
   "object-property-newline": Array [
     "off",
     Object {
-      "allowMultiplePropertiesPerLine": true,
+      "allowAllPropertiesOnSameLine": true,
     },
   ],
   "object-shorthand": Array [
@@ -1999,7 +2105,15 @@ Object {
     "error",
     "always",
   ],
-  "operator-linebreak": "off",
+  "operator-linebreak": Array [
+    "off",
+    "before",
+    Object {
+      "overrides": Object {
+        "=": "none",
+      },
+    },
+  ],
   "padded-blocks": Array [
     "off",
     Object {
@@ -2070,6 +2184,7 @@ Object {
   "react/boolean-prop-naming": Array [
     "off",
     Object {
+      "message": "",
       "propTypeNames": Array [
         "bool",
         "mutuallyExclusiveTrueProps",
@@ -2077,11 +2192,23 @@ Object {
       "rule": "^(is|has)[A-Z]([A-Za-z0-9]?)+",
     },
   ],
+  "react/button-has-type": Array [
+    "error",
+    Object {
+      "button": true,
+      "reset": false,
+      "submit": true,
+    },
+  ],
   "react/default-props-match-prop-types": Array [
     "error",
     Object {
       "allowRequiredDefaults": false,
     },
+  ],
+  "react/destructuring-assignment": Array [
+    "error",
+    "always",
   ],
   "react/display-name": Array [
     "off",
@@ -2095,16 +2222,29 @@ Object {
       "forbid": Array [],
     },
   ],
+  "react/forbid-dom-props": Array [
+    "off",
+    Object {
+      "forbid": Array [],
+    },
+  ],
   "react/forbid-elements": Array [
     "off",
     Object {
       "forbid": Array [],
     },
   ],
-  "react/forbid-foreign-prop-types": "off",
+  "react/forbid-foreign-prop-types": Array [
+    "warn",
+    Object {
+      "allowInPropTypes": true,
+    },
+  ],
   "react/forbid-prop-types": Array [
     "error",
     Object {
+      "checkChildContextTypes": true,
+      "checkContextTypes": true,
       "forbid": Array [
         "any",
         "array",
@@ -2116,6 +2256,7 @@ Object {
     "error",
     "always",
   ],
+  "react/jsx-child-element-spacing": "off",
   "react/jsx-closing-bracket-location": Array [
     "off",
     "line-aligned",
@@ -2163,6 +2304,7 @@ Object {
     2,
   ],
   "react/jsx-key": "off",
+  "react/jsx-max-depth": "off",
   "react/jsx-max-props-per-line": Array [
     "off",
     Object {
@@ -2191,7 +2333,12 @@ Object {
       "noStrings": true,
     },
   ],
-  "react/jsx-no-target-blank": "error",
+  "react/jsx-no-target-blank": Array [
+    "error",
+    Object {
+      "enforceDynamicLinks": "always",
+    },
+  ],
   "react/jsx-no-undef": "off",
   "react/jsx-one-expression-per-line": "off",
   "react/jsx-pascal-case": Array [
@@ -2199,6 +2346,13 @@ Object {
     Object {
       "allowAllCaps": true,
       "ignore": Array [],
+    },
+  ],
+  "react/jsx-props-no-multi-spaces": "error",
+  "react/jsx-sort-default-props": Array [
+    "off",
+    Object {
+      "ignoreCase": true,
     },
   ],
   "react/jsx-sort-prop-types": "off",
@@ -2221,6 +2375,7 @@ Object {
     "off",
     Object {
       "afterOpening": "never",
+      "beforeClosing": "never",
       "beforeSelfClosing": "always",
       "closingSlash": "never",
     },
@@ -2232,12 +2387,16 @@ Object {
   "react/jsx-wrap-multilines": Array [
     "off",
     Object {
-      "arrow": true,
-      "assignment": true,
-      "declaration": true,
-      "return": true,
+      "arrow": "parens-new-line",
+      "assignment": "parens-new-line",
+      "condition": "parens-new-line",
+      "declaration": "parens-new-line",
+      "logical": "parens-new-line",
+      "prop": "parens-new-line",
+      "return": "parens-new-line",
     },
   ],
+  "react/no-access-state-in-setstate": "error",
   "react/no-array-index-key": "error",
   "react/no-children-prop": "error",
   "react/no-danger": "error",
@@ -2245,7 +2404,7 @@ Object {
   "react/no-deprecated": Array [
     "error",
   ],
-  "react/no-did-mount-set-state": "error",
+  "react/no-did-mount-set-state": "off",
   "react/no-did-update-set-state": "error",
   "react/no-direct-mutation-state": "off",
   "react/no-find-dom-node": "error",
@@ -2260,6 +2419,7 @@ Object {
   "react/no-render-return-value": "error",
   "react/no-set-state": "off",
   "react/no-string-refs": "error",
+  "react/no-this-in-sfc": "error",
   "react/no-typos": "error",
   "react/no-unescaped-entities": "error",
   "react/no-unknown-property": "error",
@@ -2285,7 +2445,12 @@ Object {
     Object {},
   ],
   "react/react-in-jsx-scope": "error",
-  "react/require-default-props": "error",
+  "react/require-default-props": Array [
+    "error",
+    Object {
+      "forbidDefaultForRequired": true,
+    },
+  ],
   "react/require-optimization": Array [
     "off",
     Object {
@@ -2304,6 +2469,7 @@ Object {
       "callbacksLast": false,
       "ignoreCase": true,
       "requiredFirst": false,
+      "sortShapeProp": true,
     },
   ],
   "react/style-prop-object": "error",
@@ -2501,6 +2667,7 @@ Object {
   "import/core-modules": Array [],
   "import/extensions": Array [
     ".js",
+    ".mjs",
     ".jsx",
   ],
   "import/ignore": Array [
@@ -2516,8 +2683,8 @@ Object {
   "import/resolver": Object {
     "node": Object {
       "extensions": Array [
+        ".mjs",
         ".js",
-        ".json",
         ".json",
       ],
     },
@@ -2529,7 +2696,7 @@ Object {
   ],
   "react": Object {
     "pragma": "React",
-    "version": "15.0",
+    "version": "16.0",
   },
 }
 `;

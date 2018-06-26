@@ -20,16 +20,16 @@
     "node": ">=8.0.0"
   },
   "dependencies": {
-    "commander": "^2.15.1",
-    "cross-spawn": "^6.0.5",
-    "globby": "^8.0.1",
-    "ignore": "^3.3.8",
-    "import-sort": "^4.2.0",
-    "import-sort-parser-babylon": "^4.2.0",
-    "import-sort-parser-typescript": "^4.2.0",
-    "import-sort-style-module": "^4.2.0",
+    "commander": "^2.15.0",
+    "cross-spawn": "^6.0.0",
+    "globby": "^8.0.0",
+    "ignore": "^4.0.0",
+    "import-sort": "^5.0.0",
+    "import-sort-parser-babylon": "^5.0.0",
+    "import-sort-parser-typescript": "^5.0.0",
+    "import-sort-style-module": "^5.0.0",
     "minimist": "^1.2.0",
-    "prettier": "^1.13.3"
+    "prettier": "^1.13.0"
   },
   "devDependencies": {
     "eslint": "^4.19.0",
