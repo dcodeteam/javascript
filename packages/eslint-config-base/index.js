@@ -52,6 +52,7 @@ module.exports = {
 
     // We use `sort-import` to deal with styles.
     "import/first": ["off", "absolute-first"],
+    "import/order": ["off", { groups: [["builtin", "external", "internal"]] }],
 
     // We prefer named exports.
     "import/prefer-default-export": "off",

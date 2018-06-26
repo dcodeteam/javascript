@@ -1241,7 +1241,7 @@ Object {
   "import/no-useless-path-segments": "error",
   "import/no-webpack-loader-syntax": "error",
   "import/order": Array [
-    "error",
+    "off",
     Object {
       "groups": Array [
         Array [
