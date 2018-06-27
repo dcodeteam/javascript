@@ -33,7 +33,5 @@ module.exports = function spawn(command, args, options) {
     process.stderr.write(result.stderr);
   }
 
-  process.exitCode = result.status;
-
   return result;
 };

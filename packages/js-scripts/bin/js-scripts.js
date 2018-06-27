@@ -7,7 +7,11 @@ const pkg = require("../package.json");
 const { lint } = require("../scripts/lint");
 
 process.on("unhandledRejection", err => {
-  throw err;
+  if (err && err.message) {
+    console.error(err.message);
+  }
+
+  process.exit(1);
 });
 
 program.version(pkg.version);
@@ -22,6 +26,7 @@ program
 
 program.command("*", "", { noHelp: true }).action(command => {
   console.error("\n  error: unknown command `%s`\n", command);
+
   process.exit(1);
 });
 

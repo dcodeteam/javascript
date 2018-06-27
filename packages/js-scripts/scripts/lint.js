@@ -10,6 +10,14 @@ const codeFilesPattern = "**/*.{js,jsx,ts,tsx}";
 const styleFilesPattern = "**/*.{css,sass,scss,less}";
 const textFilesPattern = "**/*.{js,jsx,ts,tsx,md,json,css,sass,scss,less}";
 
+function trySpawn(command, args, options) {
+  const result = spawn(command, args, options);
+
+  if (result.status !== 0) {
+    process.exit(1);
+  }
+}
+
 async function lint({ fix }) {
   const [codeFiles, styleFiles, textFiles] = await Promise.all([
     resolveFiles(codeFilesPattern, [".gitignore", ".eslintignore"]),
@@ -34,7 +42,7 @@ async function lint({ fix }) {
 async function lintCode({ fix, files }) {
   const eslintPath = resolveBin("eslint");
 
-  spawn("node", [eslintPath, fix ? "--fix" : "--quiet", ...files]);
+  trySpawn("node", [eslintPath, fix ? "--fix" : "--quiet", ...files]);
 }
 
 async function lintStyle({ fix, files }) {
@@ -45,14 +53,18 @@ async function lintStyle({ fix, files }) {
   } catch (e) {}
 
   if (stylelintPath) {
-    spawn("node", [stylelintPath, fix ? "--fix" : "--quiet", ...files]);
+    trySpawn("node", [stylelintPath, fix ? "--fix" : "--quiet", ...files]);
   }
 }
 
 async function reformat({ fix, files }) {
   const prettierPath = resolveBin("prettier");
 
-  spawn("node", [prettierPath, fix ? "--write" : "--list-different", ...files]);
+  trySpawn("node", [
+    prettierPath,
+    fix ? "--write" : "--list-different",
+    ...files,
+  ]);
 }
 
 async function sortImports({ fix, files }) {
