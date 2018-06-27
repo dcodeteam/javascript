@@ -38,6 +38,9 @@ module.exports = {
     // TypeScript already resolves imports.
     "react/jsx-filename-extension": ["off", {}],
 
+    // We don't care about this kind of limitations.
+    "react/destructuring-assignment": ["off", "always"],
+
     //
     // eslint-plugin-jsx-a11y
     //

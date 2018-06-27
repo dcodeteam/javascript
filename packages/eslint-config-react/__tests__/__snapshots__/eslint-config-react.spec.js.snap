@@ -2207,7 +2207,7 @@ Object {
     },
   ],
   "react/destructuring-assignment": Array [
-    "error",
+    "off",
     "always",
   ],
   "react/display-name": Array [
