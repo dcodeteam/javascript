@@ -8,7 +8,7 @@
   "author": "Umidbek Karimov <uma.karimov@gmail.com>",
   "repository": "https://github.com/dcodeteam/javascript.git",
   "license": "MIT",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "index.js",
   "publishConfig": {
     "access": "public"
@@ -17,7 +17,7 @@
     "node": ">=8.0.0"
   },
   "dependencies": {
-    "@dc0de/eslint-config": "^0.1.0",
+    "@dc0de/eslint-config": "^0.1.1",
     "eslint-config-airbnb": "^17.0.0",
     "eslint-plugin-jsx-a11y": "^6.0.0",
     "eslint-plugin-react": "^7.7.0"
