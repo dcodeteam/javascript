@@ -43,6 +43,9 @@ module.exports = {
     // Allow empty catch blocks.
     "no-empty": ["error", { allowEmptyCatch: true }],
 
+    // Allow plusplus in for loops.
+    "no-plusplus": ["error", { allowForLoopAfterthoughts: true }],
+
     // It's ok to use hoisted functions before their actual declaration.
     "no-use-before-define": ["error", { functions: false }],
 

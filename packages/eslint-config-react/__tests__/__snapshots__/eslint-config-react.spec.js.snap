@@ -1855,7 +1855,12 @@ Object {
     },
   ],
   "no-path-concat": "error",
-  "no-plusplus": "error",
+  "no-plusplus": Array [
+    "error",
+    Object {
+      "allowForLoopAfterthoughts": true,
+    },
+  ],
   "no-process-env": "off",
   "no-process-exit": "off",
   "no-proto": "error",
