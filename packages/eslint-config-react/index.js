@@ -35,6 +35,9 @@ module.exports = {
     // TypeScript covers this functionality.
     "react/jsx-no-undef": "off",
 
+    // Sometimes we want to create multiple components in one file.
+    "react/no-multi-comp": ["off", {}],
+
     // TypeScript already resolves imports.
     "react/jsx-filename-extension": ["off", {}],
 
