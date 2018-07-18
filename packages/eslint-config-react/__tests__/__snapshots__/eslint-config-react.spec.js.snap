@@ -965,10 +965,8 @@ Object {
     "never",
   ],
   "array-callback-return": Array [
-    "error",
-    Object {
-      "allowImplicit": true,
-    },
+    "off",
+    Object {},
   ],
   "array-element-newline": Array [
     "off",

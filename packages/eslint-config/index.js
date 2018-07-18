@@ -32,8 +32,9 @@ module.exports = {
     // TODO: https://github.com/nzakas/eslint-plugin-typescript/issues/new
     "no-multi-str": "off",
 
-    // We do not need this since TypeScript has type checks.
+    // We do not need these, since TypeScript has type checks.
     "consistent-return": "off",
+    "array-callback-return": ["off", {}],
 
     // We prefer TypeScript `noUnusedLocals` option.
     "no-unused-vars": ["off", {}],
