@@ -7,8 +7,12 @@ const pkg = require("../package.json");
 const { lint } = require("../scripts/lint");
 
 process.on("unhandledRejection", err => {
-  if (err && err.message) {
-    console.error(err.message);
+  if (err) {
+    if (err.stack) {
+      console.error(err.stack);
+    } else if (err.message) {
+      console.error(err.message);
+    }
   }
 
   process.exit(1);
@@ -19,9 +23,10 @@ program.version(pkg.version);
 program
   .command("lint [options]")
   .description("run linters")
-  .option("-f, --fix", "automatically fix lint errors")
+  .option("-f, --fix", "automatically fix lint errors", false)
+  .option("-s, --staged", "only lint git staged files", false)
   .action((cmd, options) => {
-    lint({ fix: options.fix });
+    lint({ fix: options.fix, staged: options.staged });
   });
 
 program.command("*", "", { noHelp: true }).action(command => {

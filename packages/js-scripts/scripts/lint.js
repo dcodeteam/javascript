@@ -3,6 +3,7 @@
 const spawn = require("../utils/spawn");
 const resolveBin = require("../utils/resolveBin");
 const resolveFiles = require("../utils/resolveFiles");
+const resolveStagedFiles = require("../utils/resolveStagedFiles");
 
 module.exports = { lint };
 
@@ -18,24 +19,52 @@ function trySpawn(command, args, options) {
   }
 }
 
-async function lint({ fix }) {
-  const [codeFiles, styleFiles, textFiles] = await Promise.all([
-    resolveFiles(codeFilesPattern, [".gitignore", ".eslintignore"]),
-    resolveFiles(styleFilesPattern, [".gitignore", ".stylelintignore"]),
-    resolveFiles(textFilesPattern, [".gitignore", ".prettierignore"]),
-  ]);
+async function lint({ fix, staged }) {
+  const [codeFiles, styleFiles, textFiles] = await Promise.all(
+    staged
+      ? [
+          resolveStagedFiles(codeFilesPattern, [".gitignore", ".eslintignore"]),
+          resolveStagedFiles(styleFilesPattern, [
+            ".gitignore",
+            ".stylelintignore",
+          ]),
+          resolveStagedFiles(textFilesPattern, [
+            ".gitignore",
+            ".prettierignore",
+          ]),
+        ]
+      : [
+          resolveFiles(codeFilesPattern, [".gitignore", ".eslintignore"]),
+          resolveFiles(styleFilesPattern, [".gitignore", ".stylelintignore"]),
+          resolveFiles(textFilesPattern, [".gitignore", ".prettierignore"]),
+        ],
+  );
 
   if (codeFiles.length > 0) {
-    await lintCode({ fix, files: codeFiles });
-    await sortImports({ fix, files: codeFiles });
+    await lintCode({ fix: staged || fix, files: codeFiles });
+    await sortImports({ fix: staged || fix, files: codeFiles });
   }
 
   if (styleFiles.length > 0) {
-    await lintStyle({ fix, files: styleFiles });
+    await lintStyle({ fix: staged || fix, files: styleFiles });
   }
 
   if (textFiles.length > 0) {
-    await reformat({ fix, files: textFiles });
+    await reformat({ fix: staged || fix, files: textFiles });
+  }
+
+  if (staged) {
+    if (codeFiles.length > 0) {
+      await gitAdd({ files: codeFiles });
+    }
+
+    if (styleFiles.length > 0) {
+      await gitAdd({ files: styleFiles });
+    }
+
+    if (textFiles.length > 0) {
+      await gitAdd({ files: textFiles });
+    }
   }
 }
 
@@ -109,4 +138,8 @@ async function sortImports({ fix, files }) {
     console.log(diff.join("\n"));
     process.exit(1);
   }
+}
+
+async function gitAdd({ files }) {
+  trySpawn("git", ["add", ...files]);
 }

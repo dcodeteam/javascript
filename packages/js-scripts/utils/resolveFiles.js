@@ -2,22 +2,7 @@
 
 const path = require("path");
 const glob = require("globby");
-const ignore = require("ignore");
-const resolveIgnoreFile = require("./resolveIgnoreFile");
-
-function filterOutIgnored(paths, ignoreFiles) {
-  if (Array.isArray(ignoreFiles)) {
-    const ignorePatterns = ignoreFiles.map(resolveIgnoreFile).filter(Boolean);
-
-    if (ignorePatterns.length > 0) {
-      return ignore()
-        .add(ignorePatterns.join("\n"))
-        .filter(paths);
-    }
-  }
-
-  return paths;
-}
+const filterOutIgnored = require("./filterOutIgnored");
 
 module.exports = async function resolveFiles(patterns, ignoreFiles) {
   const files = await glob(patterns, {
