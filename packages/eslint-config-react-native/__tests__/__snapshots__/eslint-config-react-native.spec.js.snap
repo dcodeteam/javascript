@@ -1659,8 +1659,10 @@ Object {
     "always",
   ],
   "react/prefer-stateless-function": Array [
-    "off",
-    Object {},
+    "error",
+    Object {
+      "ignorePureComponents": true,
+    },
   ],
   "react/prop-types": Array [
     "off",

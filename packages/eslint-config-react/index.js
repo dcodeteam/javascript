@@ -29,9 +29,6 @@ module.exports = {
     // TypeScript covers `prop-types` functionality.
     "react/prop-types": ["off", {}],
 
-    // Stateless functions are not there yet in case of speed.
-    "react/prefer-stateless-function": ["off", {}],
-
     // TypeScript covers this functionality.
     "react/jsx-no-undef": "off",
 
