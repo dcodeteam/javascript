@@ -49,6 +49,10 @@ module.exports = {
     // It's ok to use hoisted functions before their actual declaration.
     "no-use-before-define": ["error", { functions: false }],
 
+    // Force newlines.
+    "newline-after-var": "error",
+    "newline-before-return": "error",
+
     //
     // eslint-plugin-import
     //

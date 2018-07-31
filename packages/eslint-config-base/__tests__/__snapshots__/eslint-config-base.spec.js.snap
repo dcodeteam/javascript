@@ -631,8 +631,8 @@ Object {
     },
   ],
   "new-parens": "off",
-  "newline-after-var": "off",
-  "newline-before-return": "off",
+  "newline-after-var": "error",
+  "newline-before-return": "error",
   "newline-per-chained-call": Array [
     "off",
     Object {
