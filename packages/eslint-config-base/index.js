@@ -49,6 +49,9 @@ module.exports = {
     // It's ok to use hoisted functions before their actual declaration.
     "no-use-before-define": ["error", { functions: false }],
 
+    // Force usage of curly braces.
+    curly: ["error", "all"],
+
     // Force newlines.
     "newline-after-var": "error",
     "newline-before-return": "error",

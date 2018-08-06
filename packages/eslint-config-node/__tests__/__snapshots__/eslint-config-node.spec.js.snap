@@ -274,8 +274,8 @@ Object {
   "consistent-this": "off",
   "constructor-super": "error",
   "curly": Array [
-    0,
-    "multi-line",
+    "error",
+    "all",
   ],
   "default-case": Array [
     "error",
