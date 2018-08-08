@@ -2,6 +2,7 @@
 
 const pkg = require("../package.json");
 const spawn = require("../utils/spawn");
+const isYarn = require("../utils/isYarn");
 const resolveBin = require("../utils/resolveBin");
 const resolveFiles = require("../utils/resolveFiles");
 const resolveStagedFiles = require("../utils/resolveStagedFiles");
@@ -65,8 +66,12 @@ function tryResolveBin(moduleName, binName) {
   try {
     return resolveBin(moduleName, binName);
   } catch (e) {
+    const yarn = isYarn();
+
     console.log(
-      "warn: `%s` not installed. Run `yarn add -D %s@%s`",
+      yarn
+        ? "warn: `%s` not installed. Run `yarn add -D %s@%s`"
+        : "warn: `%s` not installed. Run `npm install -D %s@%s`",
       moduleName,
       moduleName,
       pkg.optionalDependencies[moduleName],
