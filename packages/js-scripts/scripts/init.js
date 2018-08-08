@@ -15,6 +15,9 @@ function init() {
         message: "Choose Modules",
 
         choices: [
+          "prettier",
+          "stylelint",
+
           "@dc0de/eslint-config",
           "@dc0de/eslint-config-base",
           "@dc0de/eslint-config-node",
