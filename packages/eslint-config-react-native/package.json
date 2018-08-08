@@ -16,15 +16,15 @@
   "engines": {
     "node": ">=8.0.0"
   },
-  "dependencies": {
-    "@dc0de/eslint-config-react": "^0.1.8",
-    "eslint-plugin-react-native": "^3.2.0"
-  },
   "devDependencies": {
+    "@dc0de/eslint-config-react": "^0.1.8",
+    "eslint-plugin-react-native": "^3.2.0",
     "typescript": "^2.8.0"
   },
   "peerDependencies": {
+    "@dc0de/eslint-config-react": "^0.1.8",
     "eslint": "^4.19.0",
+    "eslint-plugin-react-native": "^3.2.0",
     "typescript": "^2.8.0"
   }
 }

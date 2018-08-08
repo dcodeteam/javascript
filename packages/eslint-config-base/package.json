@@ -16,12 +16,15 @@
   "engines": {
     "node": ">=8.0.0"
   },
-  "dependencies": {
+  "devDependencies": {
     "eslint-config-airbnb-base": "^13.0.0",
     "eslint-config-prettier": "^2.9.0",
-    "eslint-plugin-import": "~2.12.0"
+    "eslint-plugin-import": "^2.12.0"
   },
   "peerDependencies": {
-    "eslint": "^4.19.0"
+    "eslint": "^4.19.0",
+    "eslint-config-airbnb-base": "^13.0.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.12.0"
   }
 }
