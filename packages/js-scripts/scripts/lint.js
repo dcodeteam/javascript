@@ -1,5 +1,6 @@
 "use strict";
 
+const pkg = require("../package.json");
 const spawn = require("../utils/spawn");
 const resolveBin = require("../utils/resolveBin");
 const resolveFiles = require("../utils/resolveFiles");
@@ -10,14 +11,6 @@ module.exports = { lint };
 const codeFilesPattern = "**/*.{js,jsx,ts,tsx}";
 const styleFilesPattern = "**/*.{css,sass,scss,less}";
 const textFilesPattern = "**/*.{js,jsx,ts,tsx,md,json,css,sass,scss,less}";
-
-function trySpawn(command, args, options) {
-  const result = spawn(command, args, options);
-
-  if (result.status !== 0) {
-    process.exit(1);
-  }
-}
 
 async function lint({ fix, staged }) {
   const [codeFiles, styleFiles, textFiles] = await Promise.all(
@@ -68,18 +61,39 @@ async function lint({ fix, staged }) {
   }
 }
 
-async function lintCode({ fix, files }) {
-  const eslintPath = resolveBin("eslint");
+function tryResolveBin(moduleName, binName) {
+  try {
+    return resolveBin(moduleName, binName);
+  } catch (e) {
+    console.log(
+      "warn: `%s` not installed. Run `yarn add -D %s@%s`",
+      moduleName,
+      moduleName,
+      pkg.optionalDependencies[moduleName],
+    );
 
-  trySpawn("node", [eslintPath, fix ? "--fix" : "--quiet", ...files]);
+    return null;
+  }
+}
+
+function trySpawn(command, args, options) {
+  const result = spawn(command, args, options);
+
+  if (result.status !== 0) {
+    process.exit(1);
+  }
+}
+
+async function lintCode({ fix, files }) {
+  const eslintPath = tryResolveBin("eslint");
+
+  if (eslintPath) {
+    trySpawn("node", [eslintPath, fix ? "--fix" : "--quiet", ...files]);
+  }
 }
 
 async function lintStyle({ fix, files }) {
-  let stylelintPath = null;
-
-  try {
-    stylelintPath = resolveBin("stylelint");
-  } catch (e) {}
+  const stylelintPath = tryResolveBin("stylelint");
 
   if (stylelintPath) {
     trySpawn("node", [stylelintPath, fix ? "--fix" : "--quiet", ...files]);
@@ -87,13 +101,15 @@ async function lintStyle({ fix, files }) {
 }
 
 async function reformat({ fix, files }) {
-  const prettierPath = resolveBin("prettier");
+  const prettierPath = tryResolveBin("prettier");
 
-  trySpawn("node", [
-    prettierPath,
-    fix ? "--write" : "--list-different",
-    ...files,
-  ]);
+  if (prettierPath) {
+    trySpawn("node", [
+      prettierPath,
+      fix ? "--write" : "--list-different",
+      ...files,
+    ]);
+  }
 }
 
 async function sortImports({ fix, files }) {

@@ -22,7 +22,6 @@
   "dependencies": {
     "commander": "^2.15.0",
     "cross-spawn": "^6.0.0",
-    "eslint": "^4.19.0",
     "globby": "^8.0.0",
     "ignore": "^4.0.0",
     "import-sort": "^5.0.0",
@@ -31,13 +30,16 @@
     "import-sort-style-module": "^5.0.0",
     "micromatch": "^3.1.10",
     "minimist": "^1.2.0",
-    "prettier": "^1.13.0",
     "staged-git-files": "^1.1.1"
   },
   "devDependencies": {
+    "eslint": "^4.19.0",
+    "prettier": "^1.13.0",
     "stylelint": "^9.3.0"
   },
   "optionalDependencies": {
+    "eslint": "^4.19.0",
+    "prettier": "^1.13.0",
     "stylelint": "^9.3.0"
   }
 }
