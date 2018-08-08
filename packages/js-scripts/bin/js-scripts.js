@@ -5,6 +5,7 @@
 const program = require("commander");
 const pkg = require("../package.json");
 const { lint } = require("../scripts/lint");
+const { init } = require("../scripts/init");
 
 process.on("unhandledRejection", err => {
   if (err) {
@@ -21,11 +22,18 @@ process.on("unhandledRejection", err => {
 program.version(pkg.version);
 
 program
-  .command("lint [options]")
+  .command("init")
+  .description("init modules")
+  .action(() => {
+    init();
+  });
+
+program
+  .command("lint")
   .description("run linters")
   .option("-f, --fix", "automatically fix lint errors", false)
   .option("-s, --staged", "only lint git staged files", false)
-  .action((cmd, options) => {
+  .action(options => {
     lint({ fix: options.fix, staged: options.staged });
   });
 
