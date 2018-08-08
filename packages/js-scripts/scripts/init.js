@@ -3,7 +3,6 @@
 const inquirer = require("inquirer");
 
 const spawn = require("../utils/spawn");
-const isYarn = require("../utils/isYarn");
 
 module.exports = { init };
 
@@ -25,9 +24,19 @@ function init() {
 
         validate: modules => Boolean(modules && modules.length > 0),
       },
+
+      {
+        type: "list",
+        name: "binary",
+        message: "Select package manager",
+
+        choices: ["npm", "yarn"],
+
+        default: "npm",
+      },
     ])
 
-    .then(({ modules }) => {
+    .then(({ binary, modules }) => {
       const dependencies = new Set();
 
       modules.forEach(moduleName => {
@@ -40,7 +49,7 @@ function init() {
         });
       });
 
-      install(Array.from(dependencies).join(" "));
+      install(binary, dependencies);
     });
 }
 
@@ -60,8 +69,8 @@ function getPackageInfo(moduleName) {
   return JSON.parse(json);
 }
 
-function install(dependencies) {
-  return isYarn()
-    ? trySpawn("yarn", ["add", dependencies, "-D"])
-    : trySpawn("npm", ["install", dependencies, "-D"]);
+function install(binary, dependencies) {
+  return binary === "yarn"
+    ? trySpawn("yarn", ["add", ...dependencies, "-D"])
+    : trySpawn("npm", ["install", ...dependencies, "-D"]);
 }
