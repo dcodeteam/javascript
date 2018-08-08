@@ -37,20 +37,41 @@ function init() {
     ])
 
     .then(({ binary, modules }) => {
-      const dependencies = new Set();
+      const modulesMap = new Map();
 
       modules.forEach(moduleName => {
-        const { version, peerDependencies } = getPackageInfo(moduleName);
-
-        dependencies.add(`${moduleName}@${version}`);
-
-        Object.keys(peerDependencies).forEach(x => {
-          dependencies.add(`${x}@${peerDependencies[x]}`);
-        });
+        fulfillModulesMap(moduleName, null, modulesMap);
       });
+
+      const dependencies = Array.from(modulesMap).map(
+        ([key, value]) => `${key}@${value}`,
+      );
 
       install(binary, dependencies);
     });
+}
+
+function fulfillModulesMap(moduleName, moduleVersion, modulesMap) {
+  const { version, peerDependencies } = getPackageInfo(
+    moduleName,
+    moduleVersion,
+  );
+
+  if (!modulesMap.has(moduleName)) {
+    modulesMap.set(moduleName, version);
+  }
+
+  if (peerDependencies) {
+    Object.keys(peerDependencies).forEach(x => {
+      const peerModule = x;
+      const peerModuleVersion = peerDependencies[x];
+
+      if (!modulesMap.has(peerModule)) {
+        modulesMap.set(peerModule, peerModuleVersion);
+        fulfillModulesMap(peerModule, peerModuleVersion, modulesMap);
+      }
+    });
+  }
 }
 
 function trySpawn(command, args, options) {
@@ -63,10 +84,16 @@ function trySpawn(command, args, options) {
   return stdout.toString();
 }
 
-function getPackageInfo(moduleName) {
-  const json = trySpawn("npm", ["view", moduleName, "--json"]);
+function getPackageInfo(moduleName, moduleVersion) {
+  const json = trySpawn("npm", [
+    "view",
+    !moduleVersion ? moduleName : `${moduleName}@${moduleVersion}`,
+    "--json",
+  ]);
 
-  return JSON.parse(json);
+  const result = JSON.parse(json);
+
+  return Array.isArray(result) ? result.pop() : result;
 }
 
 function install(binary, dependencies) {
