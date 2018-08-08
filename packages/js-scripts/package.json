@@ -37,9 +37,6 @@
   "devDependencies": {
     "stylelint": "^9.3.0"
   },
-  "peerDependencies": {
-    "eslint": "^4.19.0"
-  },
   "optionalDependencies": {
     "stylelint": "^9.3.0"
   }
