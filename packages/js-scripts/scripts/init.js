@@ -1,10 +1,15 @@
 "use strict";
 
+const _ = require("lodash");
 const inquirer = require("inquirer");
 
 const spawn = require("../utils/spawn");
 
 module.exports = { init };
+
+function joinNameWithVersion(name, version) {
+  return [name, version].filter(Boolean).join("@");
+}
 
 function init() {
   inquirer
@@ -42,26 +47,43 @@ function init() {
     .then(({ binary, modules }) => {
       const modulesMap = new Map();
 
+      console.log("Fetching dependency tree:");
+
       modules.forEach(moduleName => {
         fulfillModulesMap(moduleName, null, modulesMap);
       });
 
-      const dependencies = Array.from(modulesMap).map(
-        ([key, value]) => `${key}@${value}`,
+      const dependencies = Array.from(modulesMap).map(([pkg, version]) =>
+        joinNameWithVersion(pkg, version),
       );
+
+      console.log("Installing %d dependencies.", dependencies.length);
 
       install(binary, dependencies);
     });
 }
 
-function fulfillModulesMap(moduleName, moduleVersion, modulesMap) {
-  const { version, peerDependencies } = getPackageInfo(
-    moduleName,
-    moduleVersion,
-  );
+const fetchPackageInfo = _.memoize(nameWithVersion => {
+  const json = trySpawn("npm", ["view", nameWithVersion, "--json"]);
+
+  const result = JSON.parse(json);
+
+  return Array.isArray(result) ? result.pop() : result;
+});
+
+function fulfillModulesMap(
+  moduleName,
+  moduleVersion,
+  modulesMap,
+  indent = "  ",
+) {
+  const nameWithVersion = joinNameWithVersion(moduleName, moduleVersion);
+  const { peerDependencies } = fetchPackageInfo(nameWithVersion);
+
+  console.log("%s%s", indent, nameWithVersion);
 
   if (!modulesMap.has(moduleName)) {
-    modulesMap.set(moduleName, version);
+    modulesMap.set(moduleName, moduleVersion);
   }
 
   if (peerDependencies) {
@@ -71,7 +93,12 @@ function fulfillModulesMap(moduleName, moduleVersion, modulesMap) {
 
       if (!modulesMap.has(peerModule)) {
         modulesMap.set(peerModule, peerModuleVersion);
-        fulfillModulesMap(peerModule, peerModuleVersion, modulesMap);
+        fulfillModulesMap(
+          peerModule,
+          peerModuleVersion,
+          modulesMap,
+          `${indent}  `,
+        );
       }
     });
   }
@@ -85,18 +112,6 @@ function trySpawn(command, args, options) {
   }
 
   return stdout.toString();
-}
-
-function getPackageInfo(moduleName, moduleVersion) {
-  const json = trySpawn("npm", [
-    "view",
-    !moduleVersion ? moduleName : `${moduleName}@${moduleVersion}`,
-    "--json",
-  ]);
-
-  const result = JSON.parse(json);
-
-  return Array.isArray(result) ? result.pop() : result;
 }
 
 function install(binary, dependencies) {
