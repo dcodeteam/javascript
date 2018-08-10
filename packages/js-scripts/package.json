@@ -23,7 +23,7 @@
     "commander": "^2.15.0",
     "cross-spawn": "^6.0.0",
     "globby": "^8.0.0",
-    "ignore": "^4.0.0",
+    "ignore": "^4.0.5",
     "import-sort": "^5.0.0",
     "import-sort-parser-babylon": "^5.0.0",
     "import-sort-parser-typescript": "^5.0.0",
@@ -41,7 +41,7 @@
   },
   "optionalDependencies": {
     "eslint": "^4.19.0",
-    "prettier": "^1.13.0",
+    "prettier": "^1.14.2",
     "stylelint": "^9.3.0"
   }
 }
