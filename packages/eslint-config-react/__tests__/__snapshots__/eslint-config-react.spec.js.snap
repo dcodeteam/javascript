@@ -2618,7 +2618,7 @@ Object {
   "typescript/no-non-null-assertion": "off",
   "typescript/no-triple-slash-reference": "error",
   "typescript/no-type-alias": Array [
-    "error",
+    "warn",
     Object {
       "allowAliases": "always",
       "allowCallbacks": "always",
