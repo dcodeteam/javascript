@@ -11,7 +11,7 @@ function getStagedFiles() {
       if (err) {
         reject(err);
       } else {
-        resolve(results.map(x => path.resolve(x.filename)));
+        resolve(results.map(x => x.filename));
       }
     });
   });
@@ -21,5 +21,5 @@ module.exports = async function resolveStagedFiles(patterns, ignoreFiles) {
   const allStagedFiles = await getStagedFiles();
   const stagedFiles = mm(allStagedFiles, patterns);
 
-  return filterOutIgnored(stagedFiles, ignoreFiles);
+  return filterOutIgnored(stagedFiles, ignoreFiles).map(x => path.resolve(x));
 };
