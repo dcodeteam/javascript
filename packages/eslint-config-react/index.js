@@ -23,6 +23,9 @@ module.exports = {
     // Override `airbnb-eslint-config` warnings as errors.
     "react/no-danger": "error",
 
+    // Forbid usage of UNSAFE React lifecycle methods.
+    "react/no-unsafe": "error",
+
     // It's really hard to follow these rules in real life big applications.
     "react/sort-comp": ["off", {}],
 

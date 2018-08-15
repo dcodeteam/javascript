@@ -7,7 +7,6 @@ module.exports = {
 
   parserOptions: {
     ecmaVersion: 2018,
-    ecmaFeatures: { experimentalObjectRestSpread: true },
   },
 
   extends: ["airbnb-base", "prettier"],
@@ -48,6 +47,14 @@ module.exports = {
 
     // It's ok to use hoisted functions before their actual declaration.
     "no-use-before-define": ["error", { functions: false }],
+
+    // Force usage object spread over Object.assign.
+    "prefer-object-spread": "error",
+
+    // Potential bugs.
+    "require-atomic-updates": "error",
+    "no-async-promise-executor": "error",
+    "no-misleading-character-class": "error",
 
     // Force usage of curly braces.
     curly: ["error", "all"],

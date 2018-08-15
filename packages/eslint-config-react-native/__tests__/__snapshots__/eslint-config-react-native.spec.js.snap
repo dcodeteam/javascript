@@ -150,7 +150,6 @@ Array [
 exports[`eslint-config-react-native should properly extend parent rules: parserOptions 1`] = `
 Object {
   "ecmaFeatures": Object {
-    "experimentalObjectRestSpread": true,
     "generators": false,
     "jsx": true,
     "objectLiteralDuplicateProperties": false,
@@ -446,6 +445,7 @@ Object {
   "import/no-named-default": "error",
   "import/no-namespace": "off",
   "import/no-nodejs-modules": "off",
+  "import/no-relative-parent-imports": "off",
   "import/no-restricted-paths": "off",
   "import/no-self-import": "error",
   "import/no-unassigned-import": "off",
@@ -571,6 +571,16 @@ Object {
   "jsx-a11y/iframe-has-title": "error",
   "jsx-a11y/img-redundant-alt": "error",
   "jsx-a11y/interactive-supports-focus": "error",
+  "jsx-a11y/label-has-associated-control": Array [
+    "error",
+    Object {
+      "assert": "both",
+      "controlComponents": Array [],
+      "depth": 25,
+      "labelAttributes": Array [],
+      "labelComponents": Array [],
+    },
+  ],
   "jsx-a11y/label-has-for": Array [
     "error",
     Object {
@@ -753,6 +763,10 @@ Object {
       "exceptAfterSingleLine": false,
     },
   ],
+  "max-classes-per-file": Array [
+    "off",
+    1,
+  ],
   "max-depth": Array [
     "off",
     4,
@@ -773,6 +787,15 @@ Object {
     "off",
     Object {
       "max": 300,
+      "skipBlankLines": true,
+      "skipComments": true,
+    },
+  ],
+  "max-lines-per-function": Array [
+    "off",
+    Object {
+      "IIFEs": true,
+      "max": 50,
       "skipBlankLines": true,
       "skipComments": true,
     },
@@ -825,6 +848,7 @@ Object {
   "no-alert": "error",
   "no-array-constructor": "error",
   "no-arrow-condition": "off",
+  "no-async-promise-executor": "error",
   "no-await-in-loop": "error",
   "no-bitwise": "error",
   "no-buffer-constructor": "error",
@@ -946,6 +970,7 @@ Object {
       "ignoreArrayIndexes": true,
     },
   ],
+  "no-misleading-character-class": "error",
   "no-mixed-operators": Array [
     0,
     Object {
@@ -1171,7 +1196,12 @@ Object {
   ],
   "no-return-await": "error",
   "no-script-url": "error",
-  "no-self-assign": "error",
+  "no-self-assign": Array [
+    "error",
+    Object {
+      "props": false,
+    },
+  ],
   "no-self-compare": "error",
   "no-sequences": "error",
   "no-shadow": "error",
@@ -1374,6 +1404,7 @@ Object {
     },
   ],
   "prefer-numeric-literals": "error",
+  "prefer-object-spread": "error",
   "prefer-promise-reject-errors": Array [
     "error",
     Object {
@@ -1541,6 +1572,8 @@ Object {
     Object {
       "allowArrowFunctions": true,
       "allowBind": false,
+      "allowFunctions": false,
+      "ignoreDOMComponents": true,
       "ignoreRefs": true,
     },
   ],
@@ -1564,7 +1597,12 @@ Object {
     },
   ],
   "react/jsx-no-undef": "off",
-  "react/jsx-one-expression-per-line": "off",
+  "react/jsx-one-expression-per-line": Array [
+    "off",
+    Object {
+      "allow": "single-child",
+    },
+  ],
   "react/jsx-pascal-case": Array [
     "error",
     Object {
@@ -1572,7 +1610,7 @@ Object {
       "ignore": Array [],
     },
   ],
-  "react/jsx-props-no-multi-spaces": "error",
+  "react/jsx-props-no-multi-spaces": "off",
   "react/jsx-sort-default-props": Array [
     "off",
     Object {
@@ -1645,6 +1683,7 @@ Object {
   "react/no-typos": "error",
   "react/no-unescaped-entities": "error",
   "react/no-unknown-property": "error",
+  "react/no-unsafe": "error",
   "react/no-unused-prop-types": Array [
     "error",
     Object {
@@ -1698,8 +1737,10 @@ Object {
   ],
   "react/style-prop-object": "error",
   "react/void-dom-elements-no-children": "error",
+  "require-atomic-updates": "error",
   "require-await": "off",
   "require-jsdoc": "off",
+  "require-unicode-regexp": "off",
   "require-yield": "error",
   "rest-spread-spacing": Array [
     "off",
