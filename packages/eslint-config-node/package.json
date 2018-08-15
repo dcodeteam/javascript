@@ -21,7 +21,7 @@
     "eslint-plugin-node": "^7.0.1"
   },
   "peerDependencies": {
-    "@dc0de/eslint-config-base": "^0.2.0",
+    "@dc0de/eslint-config-base": "^0.3.0",
     "eslint-plugin-node": "^7.0.1"
   }
 }
