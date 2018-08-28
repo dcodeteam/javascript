@@ -1,9 +1,7 @@
 {
   "root": true,
-  "env": { "jest": true },
   "extends": "../eslint-config-node/index.js",
   "rules": {
-    "node/no-unpublished-bin": "off",
     "import/no-extraneous-dependencies": "off"
   }
 }

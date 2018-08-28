@@ -7,15 +7,9 @@
   "description": "JavaScript Style Guide",
   "author": "Umidbek Karimov <uma.karimov@gmail.com>",
   "repository": "https://github.com/dcodeteam/javascript.git",
-  "jest": {
-    "testEnvironment": "node"
-  },
   "scripts": {
-    "all": "yarn lint --fix && yarn test --no-watch",
-    "test": "jest --watch",
-    "lint": "js-scripts lint",
-    "precommit": "lint-staged",
-    "ci": "yarn lint && yarn test --ci --no-watch"
+    "ci": "lerna run ci",
+    "all": "lerna run all"
   },
   "workspaces": [
     "packages/*"

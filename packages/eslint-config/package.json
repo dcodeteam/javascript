@@ -16,8 +16,16 @@
   "engines": {
     "node": ">=8.0.0"
   },
+  "scripts": {
+    "ci": "yarn lint && yarn cover --ci",
+    "all": "yarn lint --fix && yarn cover -u",
+    "lint": "yarn js-scripts lint",
+    "test": "jest --watch",
+    "cover": "jest --coverage"
+  },
   "devDependencies": {
     "@dc0de/eslint-config-base": "^0.3.0",
+    "@dc0de/js-scripts": "^0.1.12",
     "eslint-plugin-typescript": "^0.12.0",
     "typescript": "^3.0.1",
     "typescript-eslint-parser": "^18.0.0"
