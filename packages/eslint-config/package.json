@@ -27,13 +27,13 @@
     "@dc0de/eslint-config-base": "^0.3.0",
     "@dc0de/js-scripts": "^0.1.12",
     "eslint-plugin-typescript": "^0.12.0",
-    "typescript": "^3.0.1",
-    "typescript-eslint-parser": "^18.0.0"
+    "typescript": "^3.0.0",
+    "typescript-eslint-parser": "^19.0.2"
   },
   "peerDependencies": {
     "@dc0de/eslint-config-base": "^0.3.0",
     "eslint-plugin-typescript": "^0.12.0",
-    "typescript": "^3.0.1",
-    "typescript-eslint-parser": "^18.0.0"
+    "typescript": "^3.0.0",
+    "typescript-eslint-parser": "^19.0.0"
   }
 }
