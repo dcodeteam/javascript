@@ -4,8 +4,8 @@
 
 const program = require("commander");
 const pkg = require("../package.json");
-const { lint } = require("../scripts/lint");
-const { init } = require("../scripts/init");
+const { lint } = require("../src/lint/lint");
+const { init } = require("../src/init/init");
 
 process.on("unhandledRejection", err => {
   if (err) {
