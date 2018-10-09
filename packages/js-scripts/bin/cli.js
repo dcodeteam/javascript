@@ -34,7 +34,7 @@ program
   .option("-f, --fix", "automatically fix lint errors", false)
   .option("-s, --staged", "only lint git staged files", false)
   .action(options => {
-    lint({ fix: options.fix, staged: options.staged });
+    lint({ cwd: process.cwd(), fix: options.fix, staged: options.staged });
   });
 
 program.command("*", "", { noHelp: true }).action(command => {

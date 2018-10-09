@@ -2,6 +2,7 @@
 
 const jest = require("jest");
 const parseIgnoreFile = require("../utils/parseIgnoreFile");
+const resolveStagedFiles = require("./utils/resolveStagedFiles");
 
 module.exports = { lint };
 
@@ -19,7 +20,7 @@ const testFiles = [
   "markdown",
 ];
 
-function lint({ fix, staged }) {
+function lint({ cwd, fix, staged }) {
   const ignored = [
     ...parseIgnoreFile(".gitignore"),
     ...parseIgnoreFile(".eslintignore"),
@@ -44,12 +45,14 @@ function lint({ fix, staged }) {
 
   argv.push("--config", JSON.stringify({ globals: { __FIX__: shouldFix } }));
 
-  if (staged) {
-    argv.push("--onlyChanged");
-  }
-
   if (!shouldFix) {
     argv.push("--runInBand");
+  }
+
+  if (staged) {
+    const stagedFiles = resolveStagedFiles(cwd);
+
+    argv.push("--findRelatedTests", ...stagedFiles);
   }
 
   jest.run(argv);
