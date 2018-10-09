@@ -1,7 +1,9 @@
 "use strict";
 
 const fs = require("fs");
-const { pass, fail } = require("create-jest-runner");
+const { pass, fail, skip } = require("create-jest-runner");
+
+const sha256 = require("./utils/sha256");
 
 function isJS(testPath) {
   return testPath.endsWith(".js") || testPath.endsWith(".jsx");
@@ -115,26 +117,64 @@ function runImportSort(testPath, content, fix) {
   return resolveFormatted(content, sortResult.code, fix);
 }
 
+async function lintContent(testPath, input, fix) {
+  let output = input;
+
+  if (isJSorTS(testPath)) {
+    output = await runESLint(testPath, output, fix);
+    output = await runImportSort(testPath, output, fix);
+  } else if (isStyleSheet(testPath)) {
+    output = await runStylelint(testPath, output, fix);
+  }
+
+  output = await runPrettier(testPath, output, fix);
+
+  return output;
+}
+
+function getCacheStorage() {
+  const flatCache = require("flat-cache");
+
+  return flatCache.load("js-scripts");
+}
+
+function isCached(testPath, input) {
+  const storage = getCacheStorage();
+  const testPathHash = sha256(testPath);
+  const inputHash = storage.getKey(testPathHash);
+
+  return !inputHash ? false : inputHash === sha256(input);
+}
+
+function persistCache(testPath, output) {
+  const storage = getCacheStorage();
+  const testPathHash = sha256(testPath);
+
+  storage.setKey(testPathHash, sha256(output));
+  storage.save(true);
+}
+
 module.exports = async function runLint({ testPath, config }) {
   const start = new Date();
-  const { __FIX__: fix } = config.globals;
-  const original = fs.readFileSync(testPath, "utf-8");
+  const {
+    cache,
+    globals: { __FIX__: fix },
+  } = config;
+
+  const input = fs.readFileSync(testPath, "utf-8");
+
+  if (cache && isCached(testPath, input)) {
+    return skip({ start, test: { path: testPath } });
+  }
 
   try {
-    let content = original;
+    const output = await lintContent(testPath, input, fix);
 
-    if (isJSorTS(testPath)) {
-      content = await runESLint(testPath, content, fix);
-      content = await runImportSort(testPath, content, fix);
-    } else if (isStyleSheet(testPath)) {
-      content = await runStylelint(testPath, content, fix);
+    if (input !== output) {
+      fs.writeFileSync(testPath, output, "utf-8");
     }
 
-    content = await runPrettier(testPath, content, fix);
-
-    if (content !== original) {
-      fs.writeFileSync(testPath, content, "utf-8");
-    }
+    persistCache(testPath, output);
   } catch (e) {
     return fail({
       start,

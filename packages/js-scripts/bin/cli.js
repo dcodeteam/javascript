@@ -31,10 +31,16 @@ program
 program
   .command("lint")
   .description("run linters")
+  .option("--cache", "use file cache", false)
   .option("-f, --fix", "automatically fix lint errors", false)
   .option("-s, --staged", "only lint git staged files", false)
   .action(options => {
-    lint({ cwd: process.cwd(), fix: options.fix, staged: options.staged });
+    lint({
+      cwd: process.cwd(),
+      fix: options.fix,
+      cache: options.cache,
+      staged: options.staged,
+    });
   });
 
 program.command("*", "", { noHelp: true }).action(command => {

@@ -20,7 +20,7 @@ const testFiles = [
   "markdown",
 ];
 
-function lint({ cwd, fix, staged }) {
+function lint({ cwd, fix, cache, staged }) {
   const ignored = [
     ...parseIgnoreFile(".gitignore"),
     ...parseIgnoreFile(".eslintignore"),
@@ -30,7 +30,13 @@ function lint({ cwd, fix, staged }) {
 
   const shouldFix = Boolean(fix || staged);
 
-  const argv = ["--bail", "--no-cache"];
+  const argv = ["--bail"];
+
+  if (cache) {
+    argv.push("--cache");
+  } else {
+    argv.push("--no-cache");
+  }
 
   argv.push("--runner", require.resolve("./jest-runner-lint"));
 
