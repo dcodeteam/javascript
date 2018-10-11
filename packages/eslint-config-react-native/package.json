@@ -19,7 +19,7 @@
   "scripts": {
     "ci": "yarn lint && yarn cover --ci",
     "all": "yarn lint --fix && yarn cover -u",
-    "lint": "js-scripts lint",
+    "lint": "node ../js-scripts/bin/cli.js lint",
     "test": "jest --watch",
     "cover": "jest --coverage"
   },
@@ -27,7 +27,6 @@
     "@dc0de/eslint-config-base": "^0.4.0",
     "@dc0de/eslint-config-node": "^0.4.3",
     "@dc0de/eslint-config-react": "^0.4.3",
-    "@dc0de/js-scripts": "^0.3.0",
     "eslint": "^5.3.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-config-prettier": "^3.0.1",

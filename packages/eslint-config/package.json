@@ -19,13 +19,12 @@
   "scripts": {
     "ci": "yarn lint && yarn cover --ci",
     "all": "yarn lint --fix && yarn cover -u",
-    "lint": "yarn js-scripts lint",
+    "lint": "node ../js-scripts/bin/cli.js lint",
     "test": "jest --watch",
     "cover": "jest --coverage"
   },
   "devDependencies": {
     "@dc0de/eslint-config-base": "^0.4.0",
-    "@dc0de/js-scripts": "^0.3.0",
     "eslint-plugin-typescript": "^0.12.0",
     "typescript": "^3.0.0",
     "typescript-eslint-parser": "^19.0.2"

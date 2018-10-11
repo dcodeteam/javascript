@@ -19,7 +19,7 @@
   "scripts": {
     "ci": "yarn lint && yarn cover --ci",
     "all": "yarn lint --fix && yarn cover -u",
-    "lint": "js-scripts lint",
+    "lint": "node ../js-scripts/bin/cli.js lint",
     "test": "jest --watch",
     "cover": "jest --coverage"
   },
