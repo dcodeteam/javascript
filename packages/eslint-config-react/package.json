@@ -8,7 +8,7 @@
   "author": "Umidbek Karimov <uma.karimov@gmail.com>",
   "repository": "https://github.com/dcodeteam/javascript.git",
   "license": "MIT",
-  "version": "0.4.3",
+  "version": "0.4.4",
   "main": "index.js",
   "publishConfig": {
     "access": "public"
@@ -24,9 +24,9 @@
     "cover": "jest --coverage"
   },
   "devDependencies": {
-    "@dc0de/eslint-config": "^0.4.3",
-    "@dc0de/eslint-config-base": "^0.4.0",
-    "@dc0de/eslint-config-node": "^0.4.3",
+    "@dc0de/eslint-config": "^0.4.4",
+    "@dc0de/eslint-config-base": "^0.4.1",
+    "@dc0de/eslint-config-node": "^0.4.4",
     "eslint": "^5.3.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-airbnb-base": "^13.1.0",
