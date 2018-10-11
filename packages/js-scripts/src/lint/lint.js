@@ -32,6 +32,11 @@ function lint({ cwd, fix, cache, staged }) {
 
   const argv = [];
 
+  if (!shouldFix) {
+    argv.push("--bail");
+    argv.push("--runInBand");
+  }
+
   if (cache) {
     argv.push("--cache");
   } else {
@@ -50,10 +55,6 @@ function lint({ cwd, fix, cache, staged }) {
   });
 
   argv.push("--config", JSON.stringify({ globals: { __FIX__: shouldFix } }));
-
-  if (!shouldFix) {
-    argv.push("--runInBand");
-  }
 
   if (staged) {
     const stagedFiles = resolveStagedFiles(cwd);
