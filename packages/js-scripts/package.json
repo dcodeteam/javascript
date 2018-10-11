@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "cli-highlight": "^2.0.0",
-    "commander": "^2.15.0",
+    "commander": "^2.19.0",
     "create-jest-runner": "^0.4.1",
     "cross-spawn": "^6.0.0",
     "find-up": "^3.0.0",
