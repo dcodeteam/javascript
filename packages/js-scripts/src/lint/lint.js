@@ -30,7 +30,7 @@ function lint({ cwd, fix, cache, staged }) {
 
   const shouldFix = Boolean(fix || staged);
 
-  const argv = ["--bail"];
+  const argv = [];
 
   if (cache) {
     argv.push("--cache");
