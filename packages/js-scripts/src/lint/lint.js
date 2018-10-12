@@ -30,6 +30,9 @@ const testFiles = [
 
 function lint({ cwd, fix, cache, staged }) {
   const ignored = [
+    new RegExp("/package.json").source,
+    new RegExp("/package-lock.json").source,
+
     ...parseIgnoreFile(".gitignore"),
     ...parseIgnoreFile(".eslintignore"),
     ...parseIgnoreFile(".prettierignore"),
