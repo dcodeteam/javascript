@@ -23,6 +23,9 @@ function init() {
           "prettier",
           "stylelint",
 
+          "@dc0de/jest-preset",
+          "@dc0de/jest-preset-react",
+
           "@dc0de/eslint-config",
           "@dc0de/eslint-config-base",
           "@dc0de/eslint-config-node",
