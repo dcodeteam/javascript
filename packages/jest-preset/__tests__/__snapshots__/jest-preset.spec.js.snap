@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`jest-preset should match snapshot 1`] = `
+Object {
+  "collectCoverageFrom": Array [
+    "src/**/*.ts?(x)",
+    "!src/**/__docs__/**/*",
+    "!src/**/__tests__/**/*",
+  ],
+  "coverageThreshold": Object {
+    "global": Object {
+      "branches": 100,
+      "functions": 100,
+      "lines": 100,
+      "statements": 100,
+    },
+  },
+  "moduleFileExtensions": Array [
+    "ts",
+    "tsx",
+    "js",
+  ],
+  "testEnvironment": "node",
+  "testMatch": Array [
+    "**/*.spec.ts?(x)",
+  ],
+  "transform": Object {
+    "^.+\\\\.(ts|tsx)$": "babel-jest",
+  },
+}
+`;

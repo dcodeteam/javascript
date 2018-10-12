@@ -2,11 +2,9 @@
 
 const { CLIEngine } = require("eslint");
 
-module.exports = { initConfigTest };
-
-function initConfigTest(name, configFile) {
+module.exports = function initESLintTest(name, configFile) {
   const baseConfig = require(configFile);
-  const createCli = () => new CLIEngine({ useEslintrc: false, configFile });
+  const createCli = () => new CLIEngine({ configFile, useEslintrc: false });
 
   describe(name, () => {
     it("should not throw on init", () => {
@@ -59,4 +57,4 @@ function initConfigTest(name, configFile) {
       });
     });
   });
-}
+};
