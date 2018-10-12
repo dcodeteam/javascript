@@ -7,17 +7,25 @@ const resolveStagedFiles = require("./utils/resolveStagedFiles");
 module.exports = { lint };
 
 const testFiles = [
+  "json",
+
   "js",
   "jsx",
-  "json",
+
   "ts",
   "tsx",
+
   "css",
   "less",
   "scss",
-  "graphql",
+
   "md",
   "markdown",
+
+  "yml",
+  "yaml",
+
+  "graphql",
 ];
 
 function lint({ cwd, fix, cache, staged }) {
