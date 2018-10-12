@@ -1,6 +1,6 @@
 {
   "private": false,
-  "name": "@dc0de/jest-prese-react",
+  "name": "@dc0de/jest-preset-react",
   "description": "Jest Preset for React TypeScript apps",
   "keywords": [
     "jest",
