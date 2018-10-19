@@ -41,7 +41,7 @@ function lint({ cwd, fix, cache, staged }) {
 
   const shouldFix = Boolean(fix || staged);
 
-  const argv = [];
+  const argv = ["--no-watchman"];
 
   if (!shouldFix) {
     argv.push("--bail");
