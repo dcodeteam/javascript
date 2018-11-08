@@ -17,7 +17,6 @@ module.exports = {
     // eslint-plugin-react
     //
 
-    // TODO: Debatable rule.
     "react/jsx-boolean-value": ["error", "always"],
 
     // Override `airbnb-eslint-config` warnings as errors.
