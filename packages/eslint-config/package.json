@@ -17,22 +17,17 @@
     "node": ">=8.0.0"
   },
   "scripts": {
-    "ci": "yarn lint && yarn cover --ci",
-    "all": "yarn lint --fix && yarn cover -u",
-    "lint": "node ../js-scripts/bin/cli.js lint",
     "test": "jest --watch",
     "cover": "jest --coverage"
-  },
-  "devDependencies": {
-    "@dc0de/eslint-config-base": "^0.4.2",
-    "eslint-plugin-typescript": "^0.13.0",
-    "typescript": "^3.1.0",
-    "typescript-eslint-parser": "^20.0.0"
   },
   "peerDependencies": {
     "@dc0de/eslint-config-base": "^0.4.0",
     "eslint-plugin-typescript": "^0.13.0",
     "typescript": "^3.1.0",
     "typescript-eslint-parser": "^20.0.0"
+  },
+  "devDependencies": {
+    "eslint-plugin-typescript": "^0.13.0",
+    "typescript-eslint-parser": "^20.1.1"
   }
 }

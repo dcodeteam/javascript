@@ -8,6 +8,6 @@ module.exports = function createConfig() {
   return {
     ...baseConfig,
     testEnvironment: "jsdom",
-    snapshotSerializers: ["enzyme-to-json/serializer"],
+    snapshotSerializers: ["enzyme-to-json/serializer"]
   };
 };

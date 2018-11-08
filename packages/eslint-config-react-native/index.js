@@ -4,7 +4,7 @@ module.exports = {
   env: {
     node: false,
     browser: false,
-    "react-native/react-native": true,
+    "react-native/react-native": true
   },
 
   plugins: ["react-native"],
@@ -22,6 +22,6 @@ module.exports = {
     // Use theme constants..
     "react-native/no-color-literals": "error",
     // Keep app consistent.
-    "react-native/split-platform-components": "error",
-  },
+    "react-native/split-platform-components": "error"
+  }
 };

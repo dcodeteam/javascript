@@ -30,10 +30,10 @@ function init() {
           "@dc0de/eslint-config-base",
           "@dc0de/eslint-config-node",
           "@dc0de/eslint-config-react",
-          "@dc0de/eslint-config-react-native",
+          "@dc0de/eslint-config-react-native"
         ],
 
-        validate: modules => Boolean(modules && modules.length > 0),
+        validate: modules => Boolean(modules && modules.length > 0)
       },
 
       {
@@ -43,8 +43,8 @@ function init() {
 
         choices: ["npm", "yarn"],
 
-        default: "npm",
-      },
+        default: "npm"
+      }
     ])
 
     .then(({ binary, modules }) => {
@@ -57,7 +57,7 @@ function init() {
       });
 
       const dependencies = Array.from(modulesMap).map(([pkg, version]) =>
-        joinNameWithVersion(pkg, version),
+        joinNameWithVersion(pkg, version)
       );
 
       console.log("Installing %d dependencies.", dependencies.length);
@@ -78,7 +78,7 @@ function fulfillModulesMap(
   moduleName,
   moduleVersion,
   modulesMap,
-  indent = "  ",
+  indent = "  "
 ) {
   const nameWithVersion = joinNameWithVersion(moduleName, moduleVersion);
   const { peerDependencies } = fetchPackageInfo(nameWithVersion);
@@ -100,7 +100,7 @@ function fulfillModulesMap(
           peerModule,
           peerModuleVersion,
           modulesMap,
-          `${indent}  `,
+          `${indent}  `
         );
       }
     });

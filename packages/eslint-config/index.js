@@ -7,8 +7,8 @@ module.exports = {
 
   settings: {
     "import/parsers": {
-      "typescript-eslint-parser": [".ts", ".tsx"],
-    },
+      "typescript-eslint-parser": [".ts", ".tsx"]
+    }
   },
 
   extends: ["@dc0de/eslint-config-base"],
@@ -113,7 +113,7 @@ module.exports = {
     // We use namespaces only inside type definitions.
     "typescript/no-namespace": [
       "error",
-      { allowDeclarations: false, allowDefinitionFiles: true },
+      { allowDeclarations: false, allowDefinitionFiles: true }
     ],
 
     // Do not allow to create obsolete aliases.
@@ -123,8 +123,8 @@ module.exports = {
         allowAliases: "always",
         allowCallbacks: "always",
         allowLiterals: "never",
-        allowMappedTypes: "always",
-      },
-    ],
-  },
+        allowMappedTypes: "always"
+      }
+    ]
+  }
 };

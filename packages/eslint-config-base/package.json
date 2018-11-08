@@ -17,15 +17,17 @@
     "node": ">=8.0.0"
   },
   "scripts": {
-    "ci": "yarn lint && yarn cover --ci",
-    "all": "yarn lint --fix && yarn cover -u",
-    "lint": "node ../js-scripts/bin/cli.js lint",
     "test": "jest --watch",
     "cover": "jest --coverage"
   },
   "peerDependencies": {
     "eslint": "^5.3.0",
     "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-config-prettier": "^3.0.1"
+    "eslint-config-prettier": "^3.0.0"
+  },
+  "devDependencies": {
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^3.1.0",
+    "eslint-plugin-import": "^2.14.0"
   }
 }

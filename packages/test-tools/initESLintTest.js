@@ -14,7 +14,7 @@ module.exports = function initESLintTest(name, configFile) {
     it("should be same for all extensions", () => {
       const cli = createCli();
       const configs = ["js", "ts", "tsx"].map(x =>
-        cli.getConfigForFile(`index.${x}`),
+        cli.getConfigForFile(`index.${x}`)
       );
 
       configs.slice(1).forEach(x => {

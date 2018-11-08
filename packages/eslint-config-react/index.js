@@ -50,8 +50,8 @@ module.exports = {
       "error",
       {
         components: ["Label"],
-        required: { some: ["nesting", "id"] },
-      },
+        required: { some: ["nesting", "id"] }
+      }
     ],
 
     // Ignore `Link` component added by `airbnb-config`.
@@ -60,8 +60,8 @@ module.exports = {
       {
         components: [],
         specialLink: ["hrefLeft", "hrefRight"],
-        aspects: ["noHref", "invalidHref", "preferButton"],
-      },
-    ],
-  },
+        aspects: ["noHref", "invalidHref", "preferButton"]
+      }
+    ]
+  }
 };

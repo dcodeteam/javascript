@@ -10,7 +10,7 @@ module.exports = function spawn(command, args, options) {
       console.log(
         "The process failed because the process exited too early. " +
           "This probably means the system ran out of memory or someone called " +
-          "`kill -9` on the process.",
+          "`kill -9` on the process."
       );
     }
 
@@ -18,7 +18,7 @@ module.exports = function spawn(command, args, options) {
       console.log(
         "The process failed because the process exited too early. " +
           "Someone might have called `kill` or `killall`, or the system could " +
-          "be shutting down.",
+          "be shutting down."
       );
     }
 
