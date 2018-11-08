@@ -1,9 +1,7 @@
 "use strict";
 
 const fs = require("fs");
-const { pass, fail, skip } = require("create-jest-runner");
-
-const sha256 = require("./utils/sha256");
+const { pass, fail } = require("create-jest-runner");
 
 function isJS(testPath) {
   return testPath.endsWith(".js") || testPath.endsWith(".jsx");
@@ -132,28 +130,6 @@ async function lintContent(testPath, input, fix) {
   return output;
 }
 
-function getCacheStorage() {
-  const flatCache = require("flat-cache");
-
-  return flatCache.load("js-scripts");
-}
-
-function isCached(testPath, input) {
-  const storage = getCacheStorage();
-  const testPathHash = sha256(testPath);
-  const inputHash = storage.getKey(testPathHash);
-
-  return !inputHash ? false : inputHash === sha256(input);
-}
-
-function persistCache(testPath, output) {
-  const storage = getCacheStorage();
-  const testPathHash = sha256(testPath);
-
-  storage.setKey(testPathHash, sha256(output));
-  storage.save(true);
-}
-
 module.exports = async function runLint({ testPath, config }) {
   const start = new Date();
   const {
@@ -163,8 +139,8 @@ module.exports = async function runLint({ testPath, config }) {
 
   const input = fs.readFileSync(testPath, "utf-8");
 
-  if (cache && isCached(testPath, input)) {
-    return skip({ start, test: { path: testPath } });
+  if (cache) {
+    // TODO: Implement cache functionality.
   }
 
   try {
@@ -173,8 +149,6 @@ module.exports = async function runLint({ testPath, config }) {
     if (input !== output) {
       fs.writeFileSync(testPath, output, "utf-8");
     }
-
-    persistCache(testPath, output);
   } catch (e) {
     return fail({
       start,

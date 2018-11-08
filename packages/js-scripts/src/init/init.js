@@ -1,6 +1,5 @@
 "use strict";
 
-const _ = require("lodash");
 const inquirer = require("inquirer");
 
 const spawn = require("../utils/spawn");
@@ -66,13 +65,13 @@ function init() {
     });
 }
 
-const fetchPackageInfo = _.memoize(nameWithVersion => {
+function fetchPackageInfo(nameWithVersion) {
   const json = trySpawn("npm", ["view", nameWithVersion, "--json"]);
 
   const result = JSON.parse(json);
 
   return Array.isArray(result) ? result.pop() : result;
-});
+}
 
 function fulfillModulesMap(
   moduleName,
