@@ -7,6 +7,10 @@
   "description": "JavaScript Style Guide",
   "author": "Umidbek Karimov <uma.karimov@gmail.com>",
   "repository": "https://github.com/dcodeteam/javascript.git",
+  "engines": {
+    "node": ">=8.0.0",
+    "yarn": ">=1.10.0"
+  },
   "scripts": {
     "preall": "yarn install --force",
     "ci": "yarn lint && yarn cover -ci",
