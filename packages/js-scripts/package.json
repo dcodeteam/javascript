@@ -17,9 +17,6 @@
     "bin/*",
     "src/*"
   ],
-  "publishConfig": {
-    "access": "public"
-  },
   "engines": {
     "node": ">=8.3.0"
   },

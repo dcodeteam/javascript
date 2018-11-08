@@ -15,9 +15,6 @@
     "index.js",
     "jest-preset.js"
   ],
-  "publishConfig": {
-    "access": "public"
-  },
   "engines": {
     "node": ">=8.3.0"
   },
