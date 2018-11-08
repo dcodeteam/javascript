@@ -98,8 +98,8 @@ function runImportSort(testPath, content, fix) {
     parser = isJS(testPath)
       ? require("import-sort-parser-babylon")
       : isTS(testPath)
-        ? require("import-sort-parser-typescript")
-        : null;
+      ? require("import-sort-parser-typescript")
+      : null;
   } catch (e) {
     return content;
   }
