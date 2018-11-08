@@ -39,7 +39,7 @@ program
       cwd: process.cwd(),
       fix: options.fix,
       cache: options.cache,
-      staged: options.staged
+      staged: options.staged,
     });
   });
 

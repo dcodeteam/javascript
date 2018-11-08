@@ -27,8 +27,8 @@ module.exports = {
       {
         devDependencies: true,
         peerDependencies: false,
-        optionalDependencies: false
-      }
+        optionalDependencies: false,
+      },
     ],
 
     //
@@ -58,6 +58,6 @@ module.exports = {
     "node/prefer-global/console": "error",
     "node/prefer-global/process": "error",
     "node/prefer-global/url-search-params": "error",
-    "node/prefer-global/url": "error"
-  }
+    "node/prefer-global/url": "error",
+  },
 };

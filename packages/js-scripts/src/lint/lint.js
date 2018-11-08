@@ -25,7 +25,7 @@ const testFiles = [
   "yml",
   "yaml",
 
-  "graphql"
+  "graphql",
 ];
 
 function lint({ cwd, fix, cache, staged }) {
@@ -36,7 +36,7 @@ function lint({ cwd, fix, cache, staged }) {
     ...parseIgnoreFile(".gitignore"),
     ...parseIgnoreFile(".eslintignore"),
     ...parseIgnoreFile(".prettierignore"),
-    ...parseIgnoreFile(".stylelintignore")
+    ...parseIgnoreFile(".stylelintignore"),
   ];
 
   const shouldFix = Boolean(fix || staged);

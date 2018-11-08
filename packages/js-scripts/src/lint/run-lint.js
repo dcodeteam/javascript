@@ -83,7 +83,7 @@ function runPrettier(testPath, content, fix) {
     .resolveConfig(testPath)
     .then(options => ({ ...options, filepath: testPath }))
     .then(options =>
-      resolveFormatted(content, prettier.format(content, options), fix)
+      resolveFormatted(content, prettier.format(content, options), fix),
     );
 }
 
@@ -111,7 +111,7 @@ function runImportSort(testPath, content, fix) {
   const sortResult = sort(content, parser, style, testPath, {
     parser,
     style,
-    options: {}
+    options: {},
   });
 
   return resolveFormatted(content, sortResult.code, fix);
@@ -158,7 +158,7 @@ module.exports = async function runLint({ testPath, config }) {
   const start = new Date();
   const {
     cache,
-    globals: { __FIX__: fix }
+    globals: { __FIX__: fix },
   } = config;
 
   const input = fs.readFileSync(testPath, "utf-8");
@@ -179,13 +179,13 @@ module.exports = async function runLint({ testPath, config }) {
     return fail({
       start,
       end: new Date(),
-      test: { path: testPath, errorMessage: e.stack || e.message }
+      test: { path: testPath, errorMessage: e.stack || e.message },
     });
   }
 
   return pass({
     start,
     end: new Date(),
-    test: { path: testPath }
+    test: { path: testPath },
   });
 };

@@ -9,10 +9,10 @@ module.exports = function createConfig() {
     collectCoverageFrom: [
       "src/**/*.ts?(x)",
       "!src/**/__docs__/**/*",
-      "!src/**/__tests__/**/*"
+      "!src/**/__tests__/**/*",
     ],
     coverageThreshold: {
-      global: { statements: 100, branches: 100, functions: 100, lines: 100 }
-    }
+      global: { statements: 100, branches: 100, functions: 100, lines: 100 },
+    },
   };
 };

@@ -6,7 +6,7 @@ module.exports = {
   plugins: ["import"],
 
   parserOptions: {
-    ecmaVersion: 2018
+    ecmaVersion: 2018,
   },
 
   extends: ["airbnb-base", "prettier"],
@@ -24,8 +24,8 @@ module.exports = {
       "warn",
       {
         location: "anywhere",
-        terms: ["todo", "fixme"]
-      }
+        terms: ["todo", "fixme"],
+      },
     ],
 
     // Forbid to use built in logger.
@@ -72,6 +72,6 @@ module.exports = {
     "import/order": ["off", { groups: [["builtin", "external", "internal"]] }],
 
     // We prefer named exports.
-    "import/prefer-default-export": "off"
-  }
+    "import/prefer-default-export": "off",
+  },
 };

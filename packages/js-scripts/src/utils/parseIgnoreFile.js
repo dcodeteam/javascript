@@ -8,6 +8,6 @@ module.exports = function parseIgnoreFile(filePath) {
   return !fs.existsSync(filePath)
     ? []
     : parse(fs.readFileSync(filePath, "utf-8")).map(
-        x => globToRegExp(x, { flags: "g" }).source
+        x => globToRegExp(x, { flags: "g" }).source,
       );
 };
