@@ -15,7 +15,7 @@
     "preall": "yarn install --force",
     "ci": "yarn lint && yarn cover -ci",
     "all": "yarn lint --fix && yarn cover",
-    "lint": "js-scripts lint",
+    "lint": "stylotron lint",
     "cover": "yarn workspaces run cover"
   },
   "workspaces": [
@@ -23,6 +23,7 @@
   ],
   "devDependencies": {
     "jest": "^23.5.0",
-    "lerna": "^3.4.3"
+    "lerna": "^3.4.3",
+    "stylotron": "^0.0.2"
   }
 }
