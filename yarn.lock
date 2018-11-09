@@ -6847,10 +6847,10 @@ stylelint@^9.0.0:
     svg-tags "^1.0.0"
     table "^5.0.0"
 
-stylotron@^0.0.2:
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/stylotron/-/stylotron-0.0.2.tgz#7194e81b346126167159db7080a2e87a91c05796"
-  integrity sha512-GnabscVVN2PYSBvZ12e7zXPL8Z41jKpNl/+8fGJfCoSxtJ/ymiWytwyBzjDHfUONb5PoN6FWukY0ydCx2GZmlQ==
+stylotron@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/stylotron/-/stylotron-0.0.3.tgz#1025fa759d440d0347cf14c333873b7c639b4411"
+  integrity sha512-ZwRUquncUEhgdC8J5r/jqtmNLcNwRUhqb2pw4PdrKBA4mIgX9x8zobLKRxNhQemXgSJKy13qIxssd4FfRLWNsw==
   dependencies:
     commander "^2.19.0"
     create-jest-runner "^0.4.1"
