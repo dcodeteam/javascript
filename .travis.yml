@@ -1,0 +1,26 @@
+language: node_js
+
+cache: yarn
+
+notifications:
+  email: false
+
+node_js:
+  - "8"
+  - "10"
+  - "11"
+
+before_install:
+  # Install latest Yarn.
+  - curl -o- -L https://yarnpkg.com/install.sh | bash -s
+  - export PATH=$HOME/.yarn/bin:$PATH
+
+install:
+  - yarn install --force
+
+script:
+  - yarn ci
+
+branches:
+  except:
+    - "/^v\\d+\\.\\d+\\.\\d+$/"
