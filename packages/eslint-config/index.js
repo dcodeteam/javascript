@@ -61,7 +61,7 @@ module.exports = {
     // TODO: https://github.com/nzakas/eslint-plugin-typescript/pull/125
     "typescript/explicit-function-return-type": "off",
 
-    // TODO: It would be good to follow some consistent structure.
+    // It's useless now cause of lots of issues related to typescript-eslint-parser.
     "typescript/member-ordering": "off",
 
     // It's not actually helping.
