@@ -7,7 +7,11 @@ Eslint config extended from `eslint-config-base` with [eslint-plugin-typescript]
 #### Installation
 
 ```bash
-yarn add -D eslint@^4.19.1 && @dc0de/eslint-config
+# NPM
+npm i -D @dc0de/eslint-config
+
+# Yarn
+yarn add -D @dc0de/eslint-config
 ```
 
 #### Usage

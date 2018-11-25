@@ -7,7 +7,11 @@ Config for React apps. Extended from `@dc0de/eslint-config` and [eslint-config-a
 #### Installation
 
 ```bash
-yarn add -D eslint@^4.19.1 && @dc0de/eslint-config-react
+# NPM
+npm i -D @dc0de/eslint-config-react
+
+# Yarn
+yarn add -D @dc0de/eslint-config-react
 ```
 
 #### Usage

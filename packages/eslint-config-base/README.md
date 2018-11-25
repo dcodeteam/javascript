@@ -7,7 +7,11 @@ Base eslint config extended from [eslint-config-airbnb-base](https://github.com/
 #### Installation
 
 ```bash
-yarn add -D eslint@^4.19.1 && @dc0de/eslint-config-base
+# NPM
+npm i -D @dc0de/eslint-config-base
+
+# Yarn
+yarn add -D @dc0de/eslint-config-base
 ```
 
 #### Usage

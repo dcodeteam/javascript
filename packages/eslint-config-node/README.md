@@ -7,7 +7,11 @@ Config for pure ES6+Node module, usefull for js tools of configs.
 #### Installation
 
 ```bash
-yarn add -D eslint@^4.19.1 && @dc0de/eslint-config-node
+# NPM
+npm i -D @dc0de/eslint-config-node
+
+# Yarn
+yarn add -D @dc0de/eslint-config-node
 ```
 
 #### Usage

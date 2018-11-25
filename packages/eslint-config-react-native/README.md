@@ -7,7 +7,11 @@ Config for React Native apps. Extended from `@dc0de/eslint-config-react` and [es
 #### Installation
 
 ```bash
-yarn add -D eslint@^4.19.1 && @dc0de/eslint-config-react-native
+# NPM
+npm i -D @dc0de/eslint-config-react-native
+
+# Yarn
+yarn add -D @dc0de/eslint-config-react-native
 ```
 
 #### Usage
