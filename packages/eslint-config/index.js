@@ -118,7 +118,7 @@ module.exports = {
 
     // Do not allow to create obsolete aliases.
     "typescript/no-type-alias": [
-      "off", // TODO: Wait for https://github.com/nzakas/eslint-plugin-typescript/pull/137
+      "error",
       {
         allowAliases: "always",
         allowCallbacks: "always",

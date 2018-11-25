@@ -7,7 +7,7 @@
     "node": ">=8.0.0"
   },
   "scripts": {
-    "cover": "exit 0"
+    "cover": "echo cover"
   },
   "dependencies": {
     "eslint": "^5.3.0",
