@@ -22,11 +22,11 @@
   },
   "peerDependencies": {
     "@dc0de/eslint-config-base": "^0.4.0",
-    "eslint-plugin-typescript": "^0.13.0",
+    "eslint-plugin-typescript": "^0.14.0",
     "typescript-eslint-parser": "^21.0.1"
   },
   "devDependencies": {
-    "eslint-plugin-typescript": "^0.13.0",
+    "eslint-plugin-typescript": "^0.14.0",
     "typescript-eslint-parser": "^21.0.1"
   }
 }
