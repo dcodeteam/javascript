@@ -1,5 +1,9 @@
 "use strict";
 
-const createConfig = require(".");
+const baseConfig = require("@dc0de/jest-preset");
 
-module.exports = createConfig();
+module.exports = {
+  ...baseConfig,
+  testEnvironment: "jsdom",
+  snapshotSerializers: ["enzyme-to-json/serializer"],
+};

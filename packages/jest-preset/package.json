@@ -9,9 +9,8 @@
   "repository": "https://github.com/dcodeteam/javascript.git",
   "license": "MIT",
   "version": "0.0.3",
-  "main": "index.js",
+  "main": "jest-preset.js",
   "files": [
-    "index.js",
     "jest-preset.js"
   ],
   "engines": {
