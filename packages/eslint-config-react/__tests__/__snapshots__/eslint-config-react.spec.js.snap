@@ -2631,6 +2631,7 @@ Object {
         ".json",
       ],
     },
+    "typescript": Object {},
   },
   "propWrapperFunctions": Array [
     "forbidExtraProps",

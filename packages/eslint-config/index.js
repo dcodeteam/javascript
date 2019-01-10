@@ -9,6 +9,9 @@ module.exports = {
     "import/parsers": {
       "typescript-eslint-parser": [".ts", ".tsx"],
     },
+    "import/resolver": {
+      typescript: {},
+    },
   },
 
   extends: ["@dc0de/eslint-config-base"],
