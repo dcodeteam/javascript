@@ -642,7 +642,7 @@ Object {
   "isSecureContext": false,
   "length": false,
   "localStorage": false,
-  "location": false,
+  "location": true,
   "locationbar": false,
   "matchMedia": false,
   "menubar": false,
