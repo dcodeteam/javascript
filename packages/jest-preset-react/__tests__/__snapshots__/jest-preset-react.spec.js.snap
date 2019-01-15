@@ -24,7 +24,7 @@ Object {
     "jsx",
     "node",
   ],
-  "setupTestFrameworkScriptFile": "<rootDir>/src/__testutils__/setupTests",
+  "setupTestFrameworkScriptFile": "<rootDir>/src/__testutils__/setupTests.ts",
   "testEnvironment": "jsdom",
   "testMatch": Array [
     "**/__tests__/**/*.spec.ts?(x)",
