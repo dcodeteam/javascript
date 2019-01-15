@@ -6,9 +6,6 @@
   "engines": {
     "node": ">=8.0.0"
   },
-  "scripts": {
-    "cover": "echo cover"
-  },
   "dependencies": {
     "eslint": "^5.3.0",
     "jest": "^23.6.0"

@@ -16,10 +16,6 @@
   "engines": {
     "node": ">=8.0.0"
   },
-  "scripts": {
-    "test": "jest --watch",
-    "cover": "jest --coverage"
-  },
   "peerDependencies": {
     "eslint": "^5.9.0",
     "eslint-config-airbnb-base": "^13.1.0",

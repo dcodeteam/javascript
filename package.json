@@ -12,7 +12,7 @@
     "ci": "yarn lint && yarn cover -ci",
     "ci-fix": "yarn lint --fix && yarn cover",
     "lint": "stylotron lint",
-    "cover": "yarn workspaces run cover"
+    "cover": "yarn jest --coverage"
   },
   "workspaces": [
     "packages/*"

@@ -17,10 +17,6 @@
   "engines": {
     "node": ">=8.3.0"
   },
-  "scripts": {
-    "test": "jest --watch",
-    "cover": "jest --coverage"
-  },
   "peerDependencies": {
     "@dc0de/jest-preset": "^0.0.1",
     "jest": "^23.0.0"
