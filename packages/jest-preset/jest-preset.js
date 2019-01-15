@@ -6,6 +6,7 @@ module.exports = {
   transform: {
     "^.+\\.(ts|tsx)$": "babel-jest",
   },
+  testRunner: "jest-circus/runner",
   testMatch: ["**/__tests__/**/*.spec.ts?(x)"],
   moduleFileExtensions: ["ts", "tsx", "js", "json", "jsx", "node"],
   coveragePathIgnorePatterns: [

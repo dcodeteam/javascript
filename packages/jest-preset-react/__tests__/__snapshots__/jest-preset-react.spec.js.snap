@@ -29,6 +29,7 @@ Object {
   "testMatch": Array [
     "**/__tests__/**/*.spec.ts?(x)",
   ],
+  "testRunner": "jest-circus/runner",
   "transform": Object {
     "^.+\\\\.(ts|tsx)$": "babel-jest",
   },
