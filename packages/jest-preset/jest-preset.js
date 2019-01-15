@@ -2,17 +2,24 @@
 
 module.exports = {
   testEnvironment: "node",
-  testMatch: ["**/*.spec.ts?(x)"],
-  moduleFileExtensions: ["ts", "tsx", "js"],
+  setupTestFrameworkScriptFile: "<rootDir>/src/__testutils__/setupTests",
   transform: {
     "^.+\\.(ts|tsx)$": "babel-jest",
   },
-  collectCoverageFrom: [
-    "src/**/*.ts?(x)",
-    "!src/**/__docs__/**/*",
-    "!src/**/__tests__/**/*",
+  testMatch: ["**/__tests__/**/*.spec.ts?(x)"],
+  moduleFileExtensions: ["ts", "tsx", "js", "json", "jsx", "node"],
+  coveragePathIgnorePatterns: [
+    "/__docs__/",
+    "/__mocks__/",
+    "/__tests__/",
+    "/__testutils__/",
   ],
   coverageThreshold: {
-    global: { statements: 100, branches: 100, functions: 100, lines: 100 },
+    global: {
+      branches: 50,
+      functions: 50,
+      lines: 50,
+      statements: 50,
+    },
   },
 };

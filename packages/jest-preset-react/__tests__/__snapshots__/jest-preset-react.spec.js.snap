@@ -2,30 +2,32 @@
 
 exports[`jest-preset-react should match snapshot 1`] = `
 Object {
-  "collectCoverageFrom": Array [
-    "src/**/*.ts?(x)",
-    "!src/**/__docs__/**/*",
-    "!src/**/__tests__/**/*",
+  "coveragePathIgnorePatterns": Array [
+    "/__docs__/",
+    "/__mocks__/",
+    "/__tests__/",
+    "/__testutils__/",
   ],
   "coverageThreshold": Object {
     "global": Object {
-      "branches": 100,
-      "functions": 100,
-      "lines": 100,
-      "statements": 100,
+      "branches": 50,
+      "functions": 50,
+      "lines": 50,
+      "statements": 50,
     },
   },
   "moduleFileExtensions": Array [
     "ts",
     "tsx",
     "js",
+    "json",
+    "jsx",
+    "node",
   ],
-  "snapshotSerializers": Array [
-    "enzyme-to-json/serializer",
-  ],
+  "setupTestFrameworkScriptFile": "<rootDir>/src/__testutils__/setupTests",
   "testEnvironment": "jsdom",
   "testMatch": Array [
-    "**/*.spec.ts?(x)",
+    "**/__tests__/**/*.spec.ts?(x)",
   ],
   "transform": Object {
     "^.+\\\\.(ts|tsx)$": "babel-jest",
