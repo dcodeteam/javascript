@@ -2,7 +2,7 @@
 
 module.exports = {
   testEnvironment: "node",
-  setupTestFrameworkScriptFile: "<rootDir>/src/__testutils__/setupTests",
+  setupTestFrameworkScriptFile: "<rootDir>/src/__testutils__/setupTests.ts",
   transform: {
     "^.+\\.(ts|tsx)$": "babel-jest",
   },
