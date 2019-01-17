@@ -848,6 +848,7 @@ Array [
   "react",
   "jsx-a11y",
   "typescript",
+  "react-hooks",
 ]
 `;
 
@@ -2114,6 +2115,7 @@ Object {
     },
   ],
   "radix": "error",
+  "react-hooks/rules-of-hooks": "error",
   "react/boolean-prop-naming": Array [
     "off",
     Object {

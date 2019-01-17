@@ -165,6 +165,7 @@ Array [
   "react",
   "jsx-a11y",
   "typescript",
+  "react-hooks",
   "react-native",
 ]
 `;
@@ -1432,6 +1433,7 @@ Object {
     },
   ],
   "radix": "error",
+  "react-hooks/rules-of-hooks": "error",
   "react-native/no-color-literals": "error",
   "react-native/no-inline-styles": "error",
   "react-native/no-unused-styles": "error",

@@ -5,6 +5,8 @@ module.exports = {
 
   extends: ["airbnb", "prettier/react", "@dc0de/eslint-config"],
 
+  plugins: ["react-hooks"],
+
   rules: {
     //
     // eslint-plugin-import
@@ -62,5 +64,11 @@ module.exports = {
         aspects: ["noHref", "invalidHref", "preferButton"],
       },
     ],
+
+    //
+    // eslint-plugin-react-hooks
+    //
+
+    "react-hooks/rules-of-hooks": "error",
   },
 };
