@@ -6022,10 +6022,10 @@ prompts@^0.1.9:
     kleur "^2.0.1"
     sisteransi "^0.1.1"
 
-prompts@^1.2.1:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/prompts/-/prompts-1.2.1.tgz#7fd4116a458d6a62761e3ccb1432d7bbd8b2cb29"
-  integrity sha512-GE33SMMVO1ISfnq3i6cE+WYK/tLxRWtZiRkl5vdg0KR0owOCPFOsq8BuFajFbW7b2bMHb8krXaQHOpZyUEuvmA==
+prompts@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/prompts/-/prompts-2.0.1.tgz#201b3718b4276fb407f037db48c0029d6465245c"
+  integrity sha512-8lnEOSIGQbgbnO47+13S+H204L8ISogGulyi0/NNEFAQ9D1VMNTrJ9SBX2Ra03V4iPn/zt36HQMndRYkaPoWiQ==
   dependencies:
     kleur "^3.0.0"
     sisteransi "^1.0.0"
@@ -7057,15 +7057,15 @@ stylelint@^9.0.0:
     svg-tags "^1.0.0"
     table "^5.0.0"
 
-stylotron@^0.0.12:
-  version "0.0.12"
-  resolved "https://registry.yarnpkg.com/stylotron/-/stylotron-0.0.12.tgz#8f83e17cfe487ffd709d3656914b0ea5cb188dcc"
-  integrity sha512-XFakQ8uOLbDKbKwFcMAmrKIwSi/nZAalI6OdhR04FDrfd7dCHDbDWtB8m+gS2CEtm3GoLxrqI8JwrcL/52rwfg==
+stylotron@^0.0.13:
+  version "0.0.13"
+  resolved "https://registry.yarnpkg.com/stylotron/-/stylotron-0.0.13.tgz#3eb6dda3d29f8b994a3621a8f34bff3f232e9a79"
+  integrity sha512-uFZqQhndrhECwbvn6e/g0BqJnlYKtz9EXFBCWSxq8PENDOQTqJi5IyrCXDU5l6Yxnog83FvtqN548ySEZjT0GQ==
   dependencies:
     create-jest-runner "^0.4.1"
     ignore "^5.0.4"
     jest-diff "^23.6.0"
-    prompts "^1.2.1"
+    prompts "^2.0.1"
     strip-ansi "^5.0.0"
     yargs "^12.0.5"
   optionalDependencies:
