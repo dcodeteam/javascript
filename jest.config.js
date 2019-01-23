@@ -11,4 +11,5 @@ module.exports = {
     "<rootDir>/packages/jest-preset",
     "<rootDir>/packages/jest-preset-react",
   ],
+  coveragePathIgnorePatterns: ["/test-tools/"],
 };
