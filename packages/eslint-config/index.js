@@ -1,19 +1,17 @@
 "use strict";
 
 module.exports = {
+  extends: ["@dc0de/eslint-config-base"],
+
   parser: "@typescript-eslint/parser",
+  parserOptions: { project: "./tsconfig.json" },
+
   plugins: ["@typescript-eslint"],
 
   settings: {
-    "import/parsers": {
-      "@typescript-eslint/parser": [".ts", ".tsx"],
-    },
-    "import/resolver": {
-      typescript: {},
-    },
+    "import/parsers": { "@typescript-eslint/parser": [".ts", ".tsx"] },
+    "import/resolver": { typescript: {} },
   },
-
-  extends: ["@dc0de/eslint-config-base"],
 
   rules: {
     //

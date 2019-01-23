@@ -813,6 +813,7 @@ Object {
       "objectLiteralDuplicateProperties": false,
     },
     "ecmaVersion": 2018,
+    "project": "./tsconfig.json",
     "sourceType": "module",
   },
   "plugins": Array [
