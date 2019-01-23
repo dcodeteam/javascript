@@ -4,7 +4,7 @@
   "author": "Umidbek Karimov <uma.karimov@gmail.com>",
   "repository": "https://github.com/dcodeteam/javascript.git",
   "engines": {
-    "node": ">=8.0.0",
+    "node": ">=8.3.0",
     "yarn": ">=1.10.0"
   },
   "scripts": {
@@ -19,7 +19,7 @@
   ],
   "devDependencies": {
     "jest": "^23.5.0",
-    "lerna": "^3.10.5",
+    "lerna": "^3.10.7",
     "stylotron": "^0.0.13"
   }
 }

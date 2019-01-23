@@ -2,8 +2,9 @@
 
 const { CLIEngine } = require("eslint");
 
+const cleanupNodePath = x => x && x.replace(/(.*)node_modules/, "node_modules");
+
 module.exports = function initESLintTest(name, configFile) {
-  const baseConfig = require(configFile);
   const createCli = () => new CLIEngine({ configFile, useEslintrc: false });
 
   describe(name, () => {
@@ -17,44 +18,25 @@ module.exports = function initESLintTest(name, configFile) {
         cli.getConfigForFile(`index.${x}`),
       );
 
-      configs.slice(1).forEach(x => {
-        expect(x).toEqual(configs[0]);
+      const firstConfig = configs.pop();
+
+      configs.forEach(x => {
+        expect(x).toEqual(firstConfig);
       });
     });
 
     it("should properly extend parent rules", () => {
       const cli = createCli();
-      const composedConfig = cli.getConfigForFile("./index.js");
+      const {
+        parser,
+        extends: extendsConfigs,
+        ...composedConfig
+      } = cli.getConfigForFile("./index.js");
 
-      Object.keys(baseConfig).forEach(key => {
-        const base = baseConfig[key];
-        const composed = composedConfig[key];
+      expect(cleanupNodePath(parser)).toMatchSnapshot();
+      expect(extendsConfigs.map(cleanupNodePath)).toMatchSnapshot();
 
-        if (typeof base === "object") {
-          if (Array.isArray(base)) {
-            expect(composed).toEqual(expect.arrayContaining(base));
-          } else {
-            expect(composed).toMatchObject(base);
-          }
-        } else if (key === "parser") {
-          expect(composed).toEqual(expect.stringContaining(base));
-        } else {
-          expect(composed).toEqual(base);
-        }
-      });
-
-      Object.keys(composedConfig).forEach(key => {
-        const config =
-          key !== "parser" && key !== "extends"
-            ? composedConfig[key]
-            : composedConfig.extends.map(x => {
-                const idx = x.indexOf("node_modules");
-
-                return idx === -1 ? x : x.slice(idx);
-              });
-
-        expect(config).toMatchSnapshot(key);
-      });
+      expect(composedConfig).toMatchSnapshot();
     });
   });
 };
