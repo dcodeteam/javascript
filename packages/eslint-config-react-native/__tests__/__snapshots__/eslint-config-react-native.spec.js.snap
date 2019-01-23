@@ -164,7 +164,7 @@ Array [
   "import",
   "react",
   "jsx-a11y",
-  "typescript",
+  "@typescript-eslint",
   "react-hooks",
   "react-native",
 ]
@@ -1942,7 +1942,7 @@ Object {
     "\\\\.(coffee|scss|css|less|hbs|svg|json)$",
   ],
   "import/parsers": Object {
-    "typescript-eslint-parser": Array [
+    "@typescript-eslint/parser": Array [
       ".ts",
       ".tsx",
     ],

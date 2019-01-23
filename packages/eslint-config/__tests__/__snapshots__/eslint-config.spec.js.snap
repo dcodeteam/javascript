@@ -135,7 +135,7 @@ Object {
 exports[`eslint-config should properly extend parent rules: plugins 1`] = `
 Array [
   "import",
-  "typescript",
+  "@typescript-eslint",
 ]
 `;
 
@@ -1408,7 +1408,7 @@ Object {
     "\\\\.(coffee|scss|css|less|hbs|svg|json)$",
   ],
   "import/parsers": Object {
-    "typescript-eslint-parser": Array [
+    "@typescript-eslint/parser": Array [
       ".ts",
       ".tsx",
     ],
