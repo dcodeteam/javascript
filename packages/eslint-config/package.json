@@ -18,10 +18,12 @@
   },
   "peerDependencies": {
     "@dc0de/eslint-config-base": "^0.4.0",
+    "eslint-import-resolver-typescript": "^1.1.0",
     "eslint-plugin-typescript": "^0.14.0",
     "typescript-eslint-parser": "^21.0.1"
   },
   "devDependencies": {
+    "eslint-import-resolver-typescript": "^1.1.0",
     "eslint-plugin-typescript": "^0.14.0",
     "typescript-eslint-parser": "^21.0.1"
   }
