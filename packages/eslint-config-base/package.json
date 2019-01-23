@@ -19,7 +19,7 @@
   "peerDependencies": {
     "eslint": "^5.9.0",
     "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-config-prettier": "^3.3.0"
+    "eslint-config-prettier": "^3.4.0"
   },
   "devDependencies": {
     "eslint-config-airbnb-base": "^13.1.0",
