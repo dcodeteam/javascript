@@ -38,9 +38,6 @@ module.exports = {
     "consistent-return": "off",
     "array-callback-return": ["off", {}],
 
-    // We prefer TypeScript `noUnusedLocals` option.
-    "no-unused-vars": ["off", {}],
-
     // Disable to ignore TypeScript constructor assignment.
     "no-useless-constructor": "off",
 
@@ -60,73 +57,178 @@ module.exports = {
     // eslint-plugin-typescript
     //
 
-    // TODO: https://github.com/nzakas/eslint-plugin-typescript/pull/125
-    "typescript/explicit-function-return-type": "off",
+    // Require that member overloads be consecutive.
+    "@typescript-eslint/adjacent-overload-signatures": "error",
 
-    // It's useless now cause of lots of issues related to typescript-eslint-parser.
-    "typescript/member-ordering": "off",
+    // Requires using either T[] or Array<T> for arrays.
+    "@typescript-eslint/array-type": ["error", "generic"],
 
-    // It's not actually helping.
-    "typescript/member-naming": "off",
+    // Enforces that types will not to be used.
+    "@typescript-eslint/ban-types": [
+      "error",
+      {
+        types: {
+          String: {
+            message: "Use string instead",
+            fixWith: "string",
+          },
+          Boolean: {
+            message: "Use boolean instead",
+            fixWith: "boolean",
+          },
+          Number: {
+            message: "Use number instead",
+            fixWith: "number",
+          },
+          Object: {
+            message: "Use object instead",
+            fixWith: "object",
+          },
+          Symbol: {
+            message: "Use symbol instead",
+            fixWith: "symbol",
+          },
+        },
+      },
+    ],
 
-    // This rule is useless without core `no-unused-vars`.
-    "typescript/no-unused-vars": "off",
+    // Enforce camelCase naming convention.
+    camelcase: ["off", {}],
+    "@typescript-eslint/camelcase": [
+      "error",
+      {
+        allow: [],
+        properties: "always",
+        ignoreDestructuring: false,
+      },
+    ],
 
-    // Just use Prettier ©
-    "typescript/member-delimiter-style": "off",
-    "typescript/type-annotation-spacing": "off",
+    // Require PascalCased class and interface names.
+    "@typescript-eslint/class-name-casing": "error",
 
-    // It helps a lot and should be used.
-    "typescript/no-non-null-assertion": "off",
-
-    // We want to avoid usage of `any` type as much as possible.
-    "typescript/no-explicit-any": "error",
-
-    // Forbid raw usage of require.
-    "typescript/no-var-requires": "error",
-
-    // Only PascalCase class names.
-    "typescript/class-name-casing": "error",
-
-    // We want to declare arrays consistently.
-    "typescript/no-array-constructor": "error",
-
-    // Forbid usage of old `module` declaration keyword.
-    "typescript/prefer-namespace-keyword": "error",
-
-    // All references should be imported.
-    "typescript/no-triple-slash-reference": "error",
+    // Require explicit return types on functions and class methods.
+    "@typescript-eslint/explicit-function-return-type": [
+      "error",
+      { allowExpressions: true },
+    ],
 
     // All class members has to be annotated.
-    "typescript/explicit-member-accessibility": "error",
+    "@typescript-eslint/explicit-member-accessibility": "error",
 
-    // Do not mix function overloads
-    "typescript/adjacent-overload-signatures": "error",
+    // Enforces naming of generic type variables.
+    "@typescript-eslint/generic-type-naming": "error",
 
-    // We want to keep consistent type casting.
-    "typescript/no-angle-bracket-type-assertion": "error",
+    // Do not enforce consistent indentation.
+    "@typescript-eslint/indent": "off",
 
-    // Interface names should have same style as class names and type names.
-    "typescript/interface-name-prefix": ["error", "never"],
+    // Do not require that interface names be prefixed with `I`.
+    "@typescript-eslint/interface-name-prefix": ["error", "never"],
 
-    // Add TypeScript to core `no-use-before-define`.
-    "typescript/no-use-before-define": ["error", { functions: false }],
+    // Do not require a specific member delimiter style for interfaces and type
+    // literals.
+    "@typescript-eslint/member-delimiter-style": "off",
 
-    // We use namespaces only inside type definitions.
-    "typescript/no-namespace": [
+    // Do not enforce naming conventions for class members by visibility.
+    "@typescript-eslint/member-naming": "off",
+
+    // Do not require a consistent member declaration order.
+    "@typescript-eslint/member-ordering": "off",
+
+    // Enforces the use of as Type assertions instead of <Type> assertions.
+    "@typescript-eslint/no-angle-bracket-type-assertion": "error",
+
+    // Disallow generic Array constructors.
+    "@typescript-eslint/no-array-constructor": "error",
+
+    // Disallow the declaration of empty interfaces.
+    "@typescript-eslint/no-empty-interface": "error",
+
+    // Disallow usage of the `any` type.
+    "@typescript-eslint/no-explicit-any": "error",
+
+    // Forbids the use of classes as namespaces.
+    "@typescript-eslint/no-extraneous-class": [
+      "error",
+      {
+        allowEmpty: false,
+        allowStaticOnly: false,
+        allowConstructorOnly: false,
+      },
+    ],
+
+    // Disallows explicit type declarations for variables or parameters
+    // initialized to a number, string, or boolean.
+    "@typescript-eslint/no-inferrable-types": [
+      "error",
+      { ignoreProperties: false, ignoreParameters: true },
+    ],
+
+    // Enforce valid definition of new and constructor.
+    "@typescript-eslint/no-misused-new": "error",
+
+    // Disallow the use of custom TypeScript modules and namespaces.
+    "@typescript-eslint/no-namespace": [
       "error",
       { allowDeclarations: false, allowDefinitionFiles: true },
     ],
 
-    // Do not allow to create obsolete aliases.
-    "typescript/no-type-alias": [
+    // Allows non-null assertions using the `!` postfix operator.
+    "@typescript-eslint/no-non-null-assertion": "off",
+
+    // Forbids an object literal to appear in a type assertion expression.
+    "@typescript-eslint/no-object-literal-type-assertion": [
+      "error",
+      { allowAsParameter: false },
+    ],
+
+    // Allow the use of parameter properties in class constructors.
+    "@typescript-eslint/no-parameter-properties": "off",
+
+    // Disallow aliasing `this`.
+    "@typescript-eslint/no-this-alias": [
+      "error",
+      { allowedNames: [], allowDestructuring: true },
+    ],
+
+    // Disallow `/// <reference path="" />` comments.
+    "@typescript-eslint/no-triple-slash-reference": "error",
+
+    // Allow the use of type aliases.
+    "@typescript-eslint/no-type-alias": [
       "error",
       {
         allowAliases: "always",
         allowCallbacks: "always",
-        allowLiterals: "never",
+        allowLiterals: "in-unions-and-intersections",
         allowMappedTypes: "always",
       },
     ],
+
+    // We prefer TypeScript `noUnusedLocals` option.
+    "no-unused-vars": ["off", {}],
+    "@typescript-eslint/no-unused-vars": "off",
+
+    // Disallow the use of variables before they are defined.
+    "@typescript-eslint/no-use-before-define": [
+      "error",
+      { functions: false, classes: true, variables: true, typedefs: true },
+    ],
+
+    // Disallows the use of require statements except in import statements.
+    "@typescript-eslint/no-var-requires": "error",
+
+    // Prefer an interface declaration over a type literal `(type T = { ... })`.
+    "@typescript-eslint/prefer-interface": "error",
+
+    // Require the use of the `namespace` keyword instead of the `module`
+    // keyword to declare custom TypeScript modules.
+    "@typescript-eslint/prefer-namespace-keyword": "error",
+
+    // When adding two variables, operands must both be of type number or of
+    // type string.
+    "@typescript-eslint/restrict-plus-operands": "error",
+
+    // Do not require consistent spacing around type annotations.
+    "@typescript-eslint/type-annotation-spacing": "off",
   },
 };
