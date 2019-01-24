@@ -21,7 +21,6 @@ module.exports = {
     // Disable because of `typescript-eslint-parser` limitations.
     // See: https://github.com/eslint/typescript-eslint-parser#known-issues
     "no-undef": "off",
-    "import/prefer-default-export": "off",
 
     // TODO: https://github.com/eslint/typescript-eslint-parser/issues/439
     "no-shadow-restricted-names": "off",
@@ -46,10 +45,38 @@ module.exports = {
     // eslint-plugin-import
     //
 
-    // TypeScript already resolves imports.
+    // Do not ensure imports point to a file/module that can be resolved.
     "import/no-unresolved": ["off", {}],
-    "import/extensions": ["off", "always", {}],
+
+    // Do not ensure named imports correspond to a named export in the remote
+    // file.
+    "import/named": "off",
+
+    // Do not ensure a default export is present, given a default import.
+    "import/default": "off",
+
+    // Do not ensure imported namespaces contain dereferenced properties as
+    // they are dereferenced. (namespace)
+    "import/namespace": "off",
+
+    // Report any invalid exports, i.e. re-export of the same name.
+    "import/export": "off",
+
+    // Do not report use of exported name as identifier of default export.
+    "import/no-named-as-default": "off",
+
+    // Do not report use of exported name as property of default export.
+    "import/no-named-as-default-member": "off",
+
+    // Do not forbid the use of extraneous packages.
     "import/no-extraneous-dependencies": ["off", {}],
+
+    // Do not ensure consistent use of file extension within the import path.
+    "import/extensions": ["off", "always", {}],
+
+    // Do not prefer a default export if module exports a single name.
+    // See also: https://basarat.gitbooks.io/typescript/docs/tips/defaultIsBad.html
+    "import/prefer-default-export": "off",
 
     //
     // eslint-plugin-typescript
