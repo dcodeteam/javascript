@@ -358,7 +358,7 @@ Object {
     ],
     "import/named": "error",
     "import/namespace": "off",
-    "import/newline-after-import": "error",
+    "import/newline-after-import": "off",
     "import/no-absolute-path": "error",
     "import/no-amd": "error",
     "import/no-anonymous-default-export": Array [
@@ -1222,6 +1222,29 @@ Object {
       Object {
         "blankLine": "always",
         "next": "*",
+        "prev": "import",
+      },
+      Object {
+        "blankLine": "any",
+        "next": "import",
+        "prev": "import",
+      },
+      Object {
+        "blankLine": "always",
+        "next": "*",
+        "prev": Array [
+          "const",
+          "let",
+          "var",
+        ],
+      },
+      Object {
+        "blankLine": "never",
+        "next": Array [
+          "const",
+          "let",
+          "var",
+        ],
         "prev": Array [
           "const",
           "let",
@@ -1230,8 +1253,61 @@ Object {
       },
       Object {
         "blankLine": "always",
+        "next": "*",
+        "prev": "cjs-import",
+      },
+      Object {
+        "blankLine": "never",
+        "next": "cjs-import",
+        "prev": "cjs-import",
+      },
+      Object {
+        "blankLine": "always",
+        "next": "cjs-export",
+        "prev": "*",
+      },
+      Object {
+        "blankLine": "always",
+        "next": "*",
+        "prev": "cjs-export",
+      },
+      Object {
+        "blankLine": "any",
+        "next": "cjs-export",
+        "prev": "cjs-export",
+      },
+      Object {
+        "blankLine": "always",
+        "next": "export",
+        "prev": "*",
+      },
+      Object {
+        "blankLine": "always",
+        "next": "*",
+        "prev": "export",
+      },
+      Object {
+        "blankLine": "any",
+        "next": "export",
+        "prev": "export",
+      },
+      Object {
+        "blankLine": "always",
         "next": "return",
         "prev": "*",
+      },
+      Object {
+        "blankLine": "never",
+        "next": "*",
+        "prev": "return",
+      },
+      Object {
+        "blankLine": "always",
+        "next": "*",
+        "prev": Array [
+          "block-like",
+          "class",
+        ],
       },
     ],
     "prefer-arrow-callback": Array [

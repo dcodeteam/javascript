@@ -4,7 +4,9 @@ const { CLIEngine } = require("eslint");
 
 const cleanupNodePath = x => x && x.replace(/(.*)node_modules/, "node_modules");
 
-module.exports = function initESLintTest(name, configFile) {
+module.exports = initESLintTest;
+
+function initESLintTest(name, configFile) {
   const createCli = () => new CLIEngine({ configFile, useEslintrc: false });
 
   describe(name, () => {
@@ -17,7 +19,6 @@ module.exports = function initESLintTest(name, configFile) {
       const configs = ["js", "ts", "tsx"].map(x =>
         cli.getConfigForFile(`index.${x}`),
       );
-
       const firstConfig = configs.pop();
 
       configs.forEach(x => {
@@ -39,4 +40,4 @@ module.exports = function initESLintTest(name, configFile) {
       expect(composedConfig).toMatchSnapshot();
     });
   });
-};
+}

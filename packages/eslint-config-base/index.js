@@ -2,14 +2,9 @@
 
 module.exports = {
   env: { es6: true },
-
-  plugins: ["import"],
-
-  parserOptions: {
-    ecmaVersion: 2018,
-  },
-
   extends: ["airbnb-base", "prettier"],
+  plugins: ["import"],
+  parserOptions: { ecmaVersion: 2018 },
 
   rules: {
     //
@@ -57,8 +52,55 @@ module.exports = {
     // Require or disallow padding lines between statements.
     "padding-line-between-statements": [
       "error",
+
+      // Enforce blank line after `import` statement.
+      { blankLine: "always", prev: "import", next: "*" },
+
+      // Ignore blank lines between `import` statements.
+      { blankLine: "any", prev: "import", next: "import" },
+
+      // Enforce blank line after `const`, `let` or `var` statements.
       { blankLine: "always", prev: ["const", "let", "var"], next: "*" },
+
+      // Disallow blank line between `const`, `let` and `var` statements.
+      {
+        blankLine: "never",
+        prev: ["const", "let", "var"],
+        next: ["const", "let", "var"],
+      },
+
+      // Enforce blank line after `cjs-import` statement.
+      { blankLine: "always", prev: "cjs-import", next: "*" },
+
+      // Disallow blank line between `cjs-import` statement.
+      { blankLine: "never", prev: "cjs-import", next: "cjs-import" },
+
+      // Enforce blank line before `cjs-export` statement.
+      { blankLine: "always", prev: "*", next: "cjs-export" },
+
+      // Enforce blank line after `cjs-export` statement.
+      { blankLine: "always", prev: "cjs-export", next: "*" },
+
+      // Ignore blank line between `cjs-export` statement.
+      { blankLine: "any", prev: "cjs-export", next: "cjs-export" },
+
+      // Enforce blank line before `export` statement.
+      { blankLine: "always", prev: "*", next: "export" },
+
+      // Enforce blank line after `export` statement.
+      { blankLine: "always", prev: "export", next: "*" },
+
+      // Ignore blank line between `export` statement.
+      { blankLine: "any", prev: "export", next: "export" },
+
+      // Enforce blank line before `return` statement.
       { blankLine: "always", prev: "*", next: "return" },
+
+      // Disallow blank line after `return` statement.
+      { blankLine: "never", prev: "return", next: "*" },
+
+      // Enforce blank line after `block-like` and `class` statements.
+      { blankLine: "always", prev: ["block-like", "class"], next: "*" },
     ],
 
     // Disallow using `Object.assign` with an object literal as the first
@@ -117,6 +159,9 @@ module.exports = {
 
     // Do not enforce a convention in module import order.
     "import/order": ["off", { groups: [["builtin", "external", "internal"]] }],
+
+    // Do not enforce a newline after import statements.
+    "import/newline-after-import": "off",
 
     // Do not prefer a default export if module exports a single name.
     "import/prefer-default-export": "off",
