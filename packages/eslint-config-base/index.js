@@ -62,9 +62,9 @@ module.exports = {
       // Enforce blank line after `const`, `let` or `var` statements.
       { blankLine: "always", prev: ["const", "let", "var"], next: "*" },
 
-      // Disallow blank line between `const`, `let` and `var` statements.
+      // Ignore blank line between `const`, `let` and `var` statements.
       {
-        blankLine: "never",
+        blankLine: "any",
         prev: ["const", "let", "var"],
         next: ["const", "let", "var"],
       },

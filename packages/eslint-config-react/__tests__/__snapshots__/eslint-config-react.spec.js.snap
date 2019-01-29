@@ -2160,7 +2160,7 @@ Object {
         ],
       },
       Object {
-        "blankLine": "never",
+        "blankLine": "any",
         "next": Array [
           "const",
           "let",
