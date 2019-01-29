@@ -604,8 +604,8 @@ Object {
       },
     ],
     "new-parens": "off",
-    "newline-after-var": "error",
-    "newline-before-return": "error",
+    "newline-after-var": "off",
+    "newline-before-return": "off",
     "newline-per-chained-call": Array [
       "off",
       Object {
@@ -863,10 +863,8 @@ Object {
     ],
     "no-path-concat": "error",
     "no-plusplus": Array [
-      "error",
-      Object {
-        "allowForLoopAfterthoughts": true,
-      },
+      "off",
+      Object {},
     ],
     "no-process-env": "off",
     "no-process-exit": "off",
@@ -1221,7 +1219,23 @@ Object {
         "switches": "never",
       },
     ],
-    "padding-line-between-statements": "off",
+    "padding-line-between-statements": Array [
+      "error",
+      Object {
+        "blankLine": "always",
+        "next": "*",
+        "prev": Array [
+          "const",
+          "let",
+          "var",
+        ],
+      },
+      Object {
+        "blankLine": "always",
+        "next": "return",
+        "prev": "*",
+      },
+    ],
     "prefer-arrow-callback": Array [
       "error",
       Object {

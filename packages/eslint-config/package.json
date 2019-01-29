@@ -23,8 +23,8 @@
     "eslint-import-resolver-typescript": "^1.1.0"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^1.1.0",
-    "@typescript-eslint/parser": "^1.1.0",
+    "@typescript-eslint/eslint-plugin": "^1.1.1",
+    "@typescript-eslint/parser": "^1.1.1",
     "eslint-import-resolver-typescript": "^1.1.0"
   }
 }
