@@ -200,11 +200,8 @@ module.exports = {
     // Allows non-null assertions using the `!` postfix operator.
     "@typescript-eslint/no-non-null-assertion": "off",
 
-    // Forbids an object literal to appear in a type assertion expression.
-    "@typescript-eslint/no-object-literal-type-assertion": [
-      "error",
-      { allowAsParameter: false },
-    ],
+    // Allow an object literal to appear in a type assertion expression.
+    "@typescript-eslint/no-object-literal-type-assertion": ["off", {}],
 
     // Allow the use of parameter properties in class constructors.
     "@typescript-eslint/no-parameter-properties": "off",
@@ -219,15 +216,7 @@ module.exports = {
     "@typescript-eslint/no-triple-slash-reference": "error",
 
     // Allow the use of type aliases.
-    "@typescript-eslint/no-type-alias": [
-      "error",
-      {
-        allowAliases: "always",
-        allowCallbacks: "always",
-        allowLiterals: "in-unions-and-intersections",
-        allowMappedTypes: "always",
-      },
-    ],
+    "@typescript-eslint/no-type-alias": ["off", {}],
 
     // We prefer TypeScript `noUnusedLocals` option.
     "no-unused-vars": ["off", {}],

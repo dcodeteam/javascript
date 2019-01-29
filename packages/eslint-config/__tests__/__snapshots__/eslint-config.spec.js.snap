@@ -204,10 +204,8 @@ Object {
     ],
     "@typescript-eslint/no-non-null-assertion": "off",
     "@typescript-eslint/no-object-literal-type-assertion": Array [
-      "error",
-      Object {
-        "allowAsParameter": false,
-      },
+      "off",
+      Object {},
     ],
     "@typescript-eslint/no-parameter-properties": "off",
     "@typescript-eslint/no-this-alias": Array [
@@ -219,13 +217,8 @@ Object {
     ],
     "@typescript-eslint/no-triple-slash-reference": "error",
     "@typescript-eslint/no-type-alias": Array [
-      "error",
-      Object {
-        "allowAliases": "always",
-        "allowCallbacks": "always",
-        "allowLiterals": "in-unions-and-intersections",
-        "allowMappedTypes": "always",
-      },
+      "off",
+      Object {},
     ],
     "@typescript-eslint/no-unused-vars": "off",
     "@typescript-eslint/no-use-before-define": Array [
