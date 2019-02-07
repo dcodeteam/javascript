@@ -35,9 +35,6 @@ module.exports = {
     "consistent-return": "off",
     "array-callback-return": ["off", {}],
 
-    // Disable to ignore TypeScript constructor assignment.
-    "no-useless-constructor": "off",
-
     // With class approach we sometimes just want to use it's methods.
     "class-methods-use-this": ["off", {}],
 
@@ -181,6 +178,9 @@ module.exports = {
       },
     ],
 
+    // Disallow iterating over an array with a for-in loop.
+    "@typescript-eslint/no-for-in-array": "error",
+
     // Disallows explicit type declarations for variables or parameters
     // initialized to a number, string, or boolean.
     "@typescript-eslint/no-inferrable-types": [
@@ -206,6 +206,9 @@ module.exports = {
     // Allow the use of parameter properties in class constructors.
     "@typescript-eslint/no-parameter-properties": "off",
 
+    // Disallows invocation of `require()`.
+    "@typescript-eslint/no-require-imports": "error",
+
     // Disallow aliasing `this`.
     "@typescript-eslint/no-this-alias": [
       "error",
@@ -218,7 +221,10 @@ module.exports = {
     // Allow the use of type aliases.
     "@typescript-eslint/no-type-alias": ["off", {}],
 
-    // We prefer TypeScript `noUnusedLocals` option.
+    // Disallow assertions that does not change the type of an expression.
+    "@typescript-eslint/no-unnecessary-type-assertion": ["error", {}],
+
+    // Allow unused variables, and let TS `noUnusedLocals` let deal with it.
     "no-unused-vars": ["off", {}],
     "@typescript-eslint/no-unused-vars": "off",
 
@@ -227,6 +233,10 @@ module.exports = {
       "error",
       { functions: false, classes: true, variables: true, typedefs: true },
     ],
+
+    // Disallow unnecessary constructors.
+    "no-useless-constructor": "off",
+    "@typescript-eslint/no-useless-constructor": "error",
 
     // Disallows the use of require statements except in import statements.
     "@typescript-eslint/no-var-requires": "error",
@@ -237,6 +247,18 @@ module.exports = {
     // Require the use of the `namespace` keyword instead of the `module`
     // keyword to declare custom TypeScript modules.
     "@typescript-eslint/prefer-namespace-keyword": "error",
+
+    // Requires any function or method that returns a Promise to be marked async.
+    "@typescript-eslint/promise-function-async": [
+      "error",
+      {
+        allowedPromiseNames: [],
+        checkArrowFunctions: true,
+        checkFunctionDeclarations: true,
+        checkFunctionExpressions: true,
+        checkMethodDeclarations: true,
+      },
+    ],
 
     // When adding two variables, operands must both be of type number or of
     // type string.

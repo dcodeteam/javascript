@@ -187,6 +187,7 @@ Object {
         "allowStaticOnly": false,
       },
     ],
+    "@typescript-eslint/no-for-in-array": "error",
     "@typescript-eslint/no-inferrable-types": Array [
       "error",
       Object {
@@ -208,6 +209,7 @@ Object {
       Object {},
     ],
     "@typescript-eslint/no-parameter-properties": "off",
+    "@typescript-eslint/no-require-imports": "error",
     "@typescript-eslint/no-this-alias": Array [
       "error",
       Object {
@@ -220,6 +222,10 @@ Object {
       "off",
       Object {},
     ],
+    "@typescript-eslint/no-unnecessary-type-assertion": Array [
+      "error",
+      Object {},
+    ],
     "@typescript-eslint/no-unused-vars": "off",
     "@typescript-eslint/no-use-before-define": Array [
       "error",
@@ -230,9 +236,20 @@ Object {
         "variables": true,
       },
     ],
+    "@typescript-eslint/no-useless-constructor": "error",
     "@typescript-eslint/no-var-requires": "error",
     "@typescript-eslint/prefer-interface": "error",
     "@typescript-eslint/prefer-namespace-keyword": "error",
+    "@typescript-eslint/promise-function-async": Array [
+      "error",
+      Object {
+        "allowedPromiseNames": Array [],
+        "checkArrowFunctions": true,
+        "checkFunctionDeclarations": true,
+        "checkFunctionExpressions": true,
+        "checkMethodDeclarations": true,
+      },
+    ],
     "@typescript-eslint/restrict-plus-operands": "error",
     "@typescript-eslint/type-annotation-spacing": "off",
     "accessor-pairs": "off",

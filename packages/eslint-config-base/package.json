@@ -24,6 +24,6 @@
   "devDependencies": {
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-config-prettier": "^4.0.0",
-    "eslint-plugin-import": "^2.15.0"
+    "eslint-plugin-import": "^2.16.0"
   }
 }
