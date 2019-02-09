@@ -246,7 +246,7 @@ Object {
       Object {},
     ],
     "@typescript-eslint/no-unnecessary-type-assertion": Array [
-      "error",
+      "off",
       Object {},
     ],
     "@typescript-eslint/no-unused-vars": "off",
@@ -264,7 +264,7 @@ Object {
     "@typescript-eslint/prefer-interface": "error",
     "@typescript-eslint/prefer-namespace-keyword": "error",
     "@typescript-eslint/promise-function-async": Array [
-      "error",
+      "off",
       Object {
         "allowedPromiseNames": Array [],
         "checkArrowFunctions": true,
