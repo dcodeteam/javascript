@@ -250,7 +250,7 @@ module.exports = {
 
     // Requires any function or method that returns a Promise to be marked async.
     "@typescript-eslint/promise-function-async": [
-      "error",
+      "off",
       {
         allowedPromiseNames: [],
         checkArrowFunctions: true,
