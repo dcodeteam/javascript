@@ -19,7 +19,7 @@
   ],
   "devDependencies": {
     "jest": "^24.1.0",
-    "lerna": "^3.10.8",
+    "lerna": "^3.11.0",
     "stylotron": "^0.0.14"
   }
 }
