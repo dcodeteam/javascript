@@ -383,7 +383,7 @@ Object {
     ],
     "import/no-default-export": "off",
     "import/no-deprecated": "off",
-    "import/no-duplicates": "error",
+    "import/no-duplicates": "off",
     "import/no-dynamic-require": "off",
     "import/no-extraneous-dependencies": Array [
       "error",
@@ -647,7 +647,12 @@ Object {
     "no-dupe-class-members": "error",
     "no-dupe-keys": "error",
     "no-duplicate-case": "error",
-    "no-duplicate-imports": "off",
+    "no-duplicate-imports": Array [
+      "error",
+      Object {
+        "includeExports": true,
+      },
+    ],
     "no-else-return": Array [
       "error",
       Object {

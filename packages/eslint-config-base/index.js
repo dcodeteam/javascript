@@ -117,6 +117,9 @@ module.exports = {
       { requireReturnForObjectLiteral: false },
     ],
 
+    // Disallow duplicate module imports.
+    "no-duplicate-imports": ["error", { includeExports: true }],
+
     // Require using arrow functions for callbacks.
     "prefer-arrow-callback": [
       "error",
@@ -156,6 +159,9 @@ module.exports = {
 
     // Do not ensure all imports appear before other statements.
     "import/first": ["off", "absolute-first"],
+
+    // Do not report repeated import of the same module in multiple places.
+    "import/no-duplicates": "off",
 
     // Do not enforce a convention in module import order.
     "import/order": ["off", { groups: [["builtin", "external", "internal"]] }],
