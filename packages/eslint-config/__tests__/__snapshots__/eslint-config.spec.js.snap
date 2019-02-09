@@ -501,10 +501,8 @@ Object {
     ],
     "import/no-commonjs": "off",
     "import/no-cycle": Array [
-      "error",
-      Object {
-        "maxDepth": Infinity,
-      },
+      "off",
+      Object {},
     ],
     "import/no-default-export": "off",
     "import/no-deprecated": "off",

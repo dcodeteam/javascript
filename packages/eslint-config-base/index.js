@@ -155,6 +155,13 @@ module.exports = {
     //
 
     //
+    // Static analysis
+
+    // Do not forbid a module from importing a module with a dependency path
+    // back to itself.
+    "import/no-cycle": ["off", {}],
+
+    //
     // Style guide
 
     // Do not ensure all imports appear before other statements.
