@@ -222,7 +222,7 @@ module.exports = {
     "@typescript-eslint/no-type-alias": ["off", {}],
 
     // Disallow assertions that does not change the type of an expression.
-    "@typescript-eslint/no-unnecessary-type-assertion": ["error", {}],
+    "@typescript-eslint/no-unnecessary-type-assertion": ["off", {}],
 
     // Allow unused variables, and let TS `noUnusedLocals` let deal with it.
     "no-unused-vars": ["off", {}],
