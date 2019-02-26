@@ -174,6 +174,7 @@ Object {
     "camelcase": Array [
       "error",
       Object {
+        "ignoreDestructuring": false,
         "properties": "never",
       },
     ],
@@ -264,6 +265,7 @@ Object {
       "error",
       Object {
         "allowKeywords": true,
+        "allowPattern": "",
       },
     ],
     "eol-last": Array [
@@ -508,12 +510,15 @@ Object {
         "overrides": Object {
           "case": Object {
             "after": true,
+            "before": true,
           },
           "return": Object {
             "after": true,
+            "before": true,
           },
           "throw": Object {
             "after": true,
+            "before": true,
           },
         },
       },
@@ -558,11 +563,14 @@ Object {
       100,
       2,
       Object {
+        "code": 80,
         "ignoreComments": false,
         "ignoreRegExpLiterals": true,
         "ignoreStrings": true,
         "ignoreTemplateLiterals": true,
+        "ignoreTrailingComments": false,
         "ignoreUrls": true,
+        "tabWidth": 4,
       },
     ],
     "max-lines": Array [
@@ -616,6 +624,7 @@ Object {
         ],
         "newIsCap": true,
         "newIsCapExceptions": Array [],
+        "properties": true,
       },
     ],
     "new-parens": "off",
@@ -1181,6 +1190,7 @@ Object {
       "off",
       Object {
         "allowAllPropertiesOnSameLine": true,
+        "allowMultiplePropertiesPerLine": false,
       },
     ],
     "object-shorthand": Array [

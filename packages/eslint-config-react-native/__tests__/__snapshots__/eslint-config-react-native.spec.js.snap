@@ -418,6 +418,7 @@ Object {
       "error",
       Object {
         "allowKeywords": true,
+        "allowPattern": "",
       },
     ],
     "eol-last": Array [
@@ -654,6 +655,7 @@ Object {
     "jsx-a11y/aria-role": Array [
       "error",
       Object {
+        "ignoreNonDOM": false,
         "ignoreNonDom": false,
       },
     ],
@@ -826,12 +828,15 @@ Object {
         "overrides": Object {
           "case": Object {
             "after": true,
+            "before": true,
           },
           "return": Object {
             "after": true,
+            "before": true,
           },
           "throw": Object {
             "after": true,
+            "before": true,
           },
         },
       },
@@ -876,11 +881,14 @@ Object {
       100,
       2,
       Object {
+        "code": 80,
         "ignoreComments": false,
         "ignoreRegExpLiterals": true,
         "ignoreStrings": true,
         "ignoreTemplateLiterals": true,
+        "ignoreTrailingComments": false,
         "ignoreUrls": true,
+        "tabWidth": 4,
       },
     ],
     "max-lines": Array [
@@ -934,6 +942,7 @@ Object {
         ],
         "newIsCap": true,
         "newIsCapExceptions": Array [],
+        "properties": true,
       },
     ],
     "new-parens": "off",
@@ -1436,6 +1445,7 @@ Object {
       "off",
       Object {
         "allowAllPropertiesOnSameLine": true,
+        "allowMultiplePropertiesPerLine": false,
       },
     ],
     "object-shorthand": Array [
@@ -1627,6 +1637,7 @@ Object {
       },
     ],
     "radix": "error",
+    "react-hooks/exhaustive-deps": "warn",
     "react-hooks/rules-of-hooks": "error",
     "react-native/no-color-literals": "error",
     "react-native/no-inline-styles": "error",
