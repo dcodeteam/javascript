@@ -1637,7 +1637,7 @@ Object {
       },
     ],
     "radix": "error",
-    "react-hooks/exhaustive-deps": "warn",
+    "react-hooks/exhaustive-deps": "error",
     "react-hooks/rules-of-hooks": "error",
     "react-native/no-color-literals": "error",
     "react-native/no-inline-styles": "error",
