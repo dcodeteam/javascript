@@ -850,7 +850,7 @@ Object {
       },
     ],
     "linebreak-style": Array [
-      "error",
+      "off",
       "unix",
     ],
     "lines-around-comment": 0,
@@ -1928,7 +1928,7 @@ Object {
       },
     ],
     "react/require-render-return": "error",
-    "react/self-closing-comp": "error",
+    "react/self-closing-comp": "off",
     "react/sort-comp": Array [
       "off",
       Object {},

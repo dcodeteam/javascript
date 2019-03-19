@@ -632,7 +632,7 @@ Object {
       },
     ],
     "linebreak-style": Array [
-      "error",
+      "off",
       "unix",
     ],
     "lines-around-comment": 0,

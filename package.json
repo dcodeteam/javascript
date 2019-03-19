@@ -18,8 +18,8 @@
     "packages/*"
   ],
   "devDependencies": {
-    "jest": "^24.1.0",
-    "lerna": "^3.13.0",
-    "stylotron": "^0.0.30"
+    "jest": "^24.5.0",
+    "lerna": "^3.13.1",
+    "stylotron": "^0.0.37"
   }
 }
