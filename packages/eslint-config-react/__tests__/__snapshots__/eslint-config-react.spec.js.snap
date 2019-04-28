@@ -2000,7 +2000,7 @@ Object {
     "no-self-compare": "error",
     "no-sequences": "error",
     "no-shadow": "error",
-    "no-shadow-restricted-names": "off",
+    "no-shadow-restricted-names": "error",
     "no-space-before-semi": "off",
     "no-spaced-func": "off",
     "no-sparse-arrays": "error",
