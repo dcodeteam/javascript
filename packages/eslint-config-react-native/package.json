@@ -21,6 +21,6 @@
     "eslint-plugin-react-native": "^3.5.0"
   },
   "devDependencies": {
-    "eslint-plugin-react-native": "^3.5.0"
+    "eslint-plugin-react-native": "^3.7.0"
   }
 }

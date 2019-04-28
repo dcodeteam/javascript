@@ -11,15 +11,15 @@
     "preci-fix": "yarn install --force",
     "ci": "yarn lint && yarn cover -ci",
     "ci-fix": "yarn lint --fix && yarn cover",
-    "lint": "stylotron lint",
+    "lint": "cg lint",
     "cover": "yarn jest --coverage"
   },
   "workspaces": [
     "packages/*"
   ],
   "devDependencies": {
-    "jest": "^24.5.0",
-    "lerna": "^3.13.1",
-    "stylotron": "^0.0.37"
+    "code-guard": "^0.1.1",
+    "jest": "^24.7.1",
+    "lerna": "^3.13.4"
   }
 }
