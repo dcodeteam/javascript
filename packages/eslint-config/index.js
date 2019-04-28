@@ -22,9 +22,6 @@ module.exports = {
     // See: https://github.com/eslint/typescript-eslint-parser#known-issues
     "no-undef": "off",
 
-    // TODO: https://github.com/eslint/typescript-eslint-parser/issues/414
-    "no-restricted-globals": ["off", {}],
-
     // TODO: https://github.com/nzakas/eslint-plugin-typescript/issues/new
     "no-multi-str": "off",
 
