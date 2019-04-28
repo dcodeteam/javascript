@@ -8,6 +8,7 @@
     "yarn": ">=1.10.0"
   },
   "scripts": {
+    "pub": "lerna publish",
     "preci-fix": "yarn install --force",
     "ci": "yarn lint && yarn cover -ci",
     "ci-fix": "yarn lint --fix && yarn cover",
