@@ -16,7 +16,7 @@ before_install:
   - export PATH=$HOME/.yarn/bin:$PATH
 
 install:
-  - yarn install --force
+  - yarn install --frozen-lockfile
 
 script:
   - yarn test
