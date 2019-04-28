@@ -19,7 +19,7 @@ install:
   - yarn install --force
 
 script:
-  - yarn ci
+  - yarn test
 
 branches:
   except:
