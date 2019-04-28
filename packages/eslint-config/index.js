@@ -22,9 +22,6 @@ module.exports = {
     // See: https://github.com/eslint/typescript-eslint-parser#known-issues
     "no-undef": "off",
 
-    // TODO: https://github.com/nzakas/eslint-plugin-typescript/issues/new
-    "no-multi-str": "off",
-
     // We do not need these, since TypeScript has type checks.
     "consistent-return": "off",
     "array-callback-return": ["off", {}],

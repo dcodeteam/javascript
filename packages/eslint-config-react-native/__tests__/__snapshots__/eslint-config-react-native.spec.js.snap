@@ -1170,7 +1170,7 @@ Object {
         "ignoreEOLComments": false,
       },
     ],
-    "no-multi-str": "off",
+    "no-multi-str": "error",
     "no-multiple-empty-lines": Array [
       "off",
       Object {
