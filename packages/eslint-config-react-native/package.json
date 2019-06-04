@@ -34,9 +34,9 @@
     "typescript-eslint-parser": "^22.0.0"
   },
   "peerDependencies": {
-    "@dc0de/eslint-config": "^0.6.0",
-    "@dc0de/eslint-config-base": "^0.6.0",
-    "@dc0de/eslint-config-react": "^0.6.0",
+    "@dc0de/eslint-config": "^0.7.0",
+    "@dc0de/eslint-config-base": "^0.7.0",
+    "@dc0de/eslint-config-react": "^0.7.0",
     "eslint": "^5.0.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-airbnb-base": "^13.1.0",
