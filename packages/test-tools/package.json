@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "test-tools",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "main": "./index.js",
   "engines": {
     "node": ">=8.3.0"
