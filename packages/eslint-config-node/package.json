@@ -16,11 +16,20 @@
   "engines": {
     "node": ">=8.0.0"
   },
+  "devDependencies": {
+    "@dc0de/eslint-config-base": "^0.6.0",
+    "eslint": "^5.0.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^4.3.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^9.1.0"
+  },
   "peerDependencies": {
     "@dc0de/eslint-config-base": "^0.6.0",
-    "eslint-plugin-node": "^8.0.0"
-  },
-  "devDependencies": {
+    "eslint": "^5.0.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^3.4.0",
+    "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-node": "^8.0.0"
   }
 }
